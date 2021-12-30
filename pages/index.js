@@ -9,6 +9,9 @@ import { nftaddress, nftmarketaddress } from "../config";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
 
+let rpcEndpoint = "https://polygon-mumbai.g.alchemy.com/v2/elWZjOPfS0H03lYqe4-fSCu7LM4i7HUD";
+
+
 export default function Home() {
 	const [nfts, setNfts] = useState([]);
 	const [loadingState, setLoadingState] = useState("not-loaded");
@@ -16,7 +19,16 @@ export default function Home() {
 		loadNFTs();
 	}, []);
 	async function loadNFTs() {
-		const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.infura.io/v3/f0671e059fde4ab1a541db0a8ea9aa1d");
+		//const web3Modal = new Web3Modal();
+		//const connection = await web3Modal.connect();
+		//const provider = new ethers.providers.Web3Provider(connection);
+
+		const provider = new ethers.providers.JsonRpcProvider(rpcEndpoint);
+		//const provider = new ethers.providers.InfuraProvider("maticmum", {projectId: "f0671e059fde4ab1a541db0a8ea9aa1d",projectSecret: "056ae48abd6d4f0682f5df28258d3ea2",});
+		//const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.infura.io/v3/f0671e059fde4ab1a541db0a8ea9aa1d");
+		//const provider = new ethers.providers.InfuraProvider("maticmum", { projectId: "f0671e059fde4ab1a541db0a8ea9aa1d",});
+		//const provider = new ethers.providers.InfuraProvider("ropsten","f0671e059fde4ab1a541db0a8ea9aa1d");
+
 		const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
 		const marketContract = new ethers.Contract(
 			nftmarketaddress,
@@ -79,9 +91,9 @@ export default function Home() {
 
 					<div className='md:w-3/5 md:pl-6'>
 						<p className='leading-relaxed text-base pb-8'>
-							It is empty because all profile cards created in the system are bought
-							already. If you represent a company or agency, it is a great
-							opportunity to finish the first steps decribed{" "}
+							It is empty because all profile cards created in the system are
+							bought already. If you represent a company or agency, it is a
+							great opportunity to finish the first steps decribed{" "}
 							<Link href='/about'>
 								<a className='underline'>here</a>
 							</Link>

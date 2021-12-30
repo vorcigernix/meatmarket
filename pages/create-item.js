@@ -26,6 +26,7 @@ export default function CreateItem() {
 		mobile: "",
 		linked: "",
 	});
+	const [loadingState, setLoadingState] = useState(false);
 	const router = useRouter();
 	useEffect(() => {
 		async function loadLocation(url) {
@@ -104,6 +105,7 @@ export default function CreateItem() {
 	}
 
 	async function createSale(url) {
+		setLoadingState(true);
 		const web3Modal = new Web3Modal();
 		const connection = await web3Modal.connect();
 		const provider = new ethers.providers.Web3Provider(connection);
@@ -129,7 +131,54 @@ export default function CreateItem() {
 			value: listingPrice,
 		});
 		await transaction.wait();
+		setLoadingState(false);
 		router.push("/");
+	}
+
+	if (loadingState) {
+		return (
+			<section class='text-gray-600 body-font'>
+				<div class='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
+					<div class='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
+						<h1 class='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
+							Before you wink
+							<br class='inline-block' />
+							your card will be ready
+						</h1>
+						<p class='mb-8 leading-relaxed'>
+							Now we ask for a confirmations from you. First is a "sign" that
+							works the same way as a signature on a paper. Second is actual
+							creation of a card on blockchain. After the transactions are
+							confirmed, we will redirect you to the main page automatically.
+						</p>
+						<div className='flex md:mt-4 mt-6'>
+							<Link href='/about'>
+								<a className='text-purple-500 inline-flex items-center'>
+									Lost?
+									<svg
+										fill='none'
+										stroke='currentColor'
+										strokeLinecap='round'
+										strokeLinejoin='round'
+										strokeWidth='2'
+										className='w-4 h-4 ml-2'
+										viewBox='0 0 24 24'>
+										<path d='M5 12h14M12 5l7 7-7 7'></path>
+									</svg>
+								</a>
+							</Link>
+						</div>
+					</div>
+					<div class='lg:max-w-lg lg:w-full md:w-1/2 w-5/6'>
+						<img
+							class='object-cover object-center rounded'
+							alt='hero'
+							src='contract.svg'
+						/>
+					</div>
+				</div>
+			</section>
+		);
 	}
 
 	return (
@@ -141,10 +190,10 @@ export default function CreateItem() {
 					</h2>
 					<div className='md:w-3/5 md:pl-6'>
 						<p className='leading-relaxed text-base'>
-							Younf profile is like free business card in NFT token. You put the card
-							to the marketplace and whoever buys the card get a direct contact
-							information. You get 95% of the price you set on the card by
-							setting your level.
+							Younf profile is like free business card in NFT token. You put the
+							card to the marketplace and whoever buys the card get a direct
+							contact information. You get 95% of the price you set on the card
+							by setting your level.
 						</p>
 						<div className='flex md:mt-4 mt-6'>
 							<Link href='/about'>
@@ -166,6 +215,7 @@ export default function CreateItem() {
 					</div>
 				</div>
 			</section>
+
 			<section className='max-w-md mx-auto bg-white rounded-xl shadow-lg shadow-purple-500/50 overflow-hidden md:max-w-4xl '>
 				<div className='md:flex'>
 					<div className='md:shrink-0'>
@@ -217,7 +267,8 @@ export default function CreateItem() {
 					<div className='p-8 text-base md:text-sm'>
 						{!location && (
 							<div className=' bg-gradient-to-tl from-pink-700 text-center to-pink-400 text-white rounded-3xl m-4 p-4'>
-								We ask for your location to store country level information only.
+								We ask for your location to store country level information
+								only.
 							</div>
 						)}
 						<input
@@ -281,12 +332,12 @@ export default function CreateItem() {
 						<div className='flex mt-2 border rounded p-4 text-gray-400'>
 							<span className='mr-3'>Level</span>
 							<button
-								className='border-2 border-gray-100 bg-white focus:border-gray-400 rounded-full w-6 h-6 focus:outline-none'
+								className='border-2 border-gray-100 bg-white focus:border-purple-400 rounded-full w-6 h-6 focus:outline-none'
 								onClick={(e) =>
 									updateFormInput({ ...formInput, price: "0.01" })
 								}></button>
 							<button
-								className='border-2 border-gray-100 ml-1 focus:border-purple-900 bg-purple-500 rounded-full w-6 h-6 focus:outline-none'
+								className='border-2 border-gray-100 ml-1 focus:border-purple-400 bg-purple-200 rounded-full w-6 h-6 focus:outline-none'
 								onClick={(e) =>
 									updateFormInput({ ...formInput, price: "0.03" })
 								}></button>

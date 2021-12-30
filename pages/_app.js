@@ -1,12 +1,13 @@
-import Nav from "../components/nav";
+import Layout from '../components/layout'
 import "../styles/globals.css";
 
 function Marketplace({ Component, pageProps }) {
 	return (
-		<div>
-			<Nav />
+		<Layout>
+			
 			<Component {...pageProps} />
-		</div>
+		
+		</Layout>
 	);
 }
 
