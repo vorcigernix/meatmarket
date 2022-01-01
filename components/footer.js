@@ -125,7 +125,7 @@ const Footer = () => {
 							</li>
 							<li>
 								<a
-									href='mailto:vorcigernix+younf@gmail.com'
+									href='mailto:marketing@younf.com'
 									className='text-gray-600 hover:text-gray-800'>
 									E-mail
 								</a>
