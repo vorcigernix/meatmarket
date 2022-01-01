@@ -81,13 +81,25 @@ const Footer = () => {
 						</h2>
 						<nav className='list-none mb-10'>
 							<li>
-								<a className='text-gray-600 hover:text-gray-800'>Ethereum</a>
+								<a
+									href='https://ethereum.org/en/'
+									className='text-gray-600 hover:text-gray-800'>
+									Ethereum
+								</a>
 							</li>
 							<li>
-								<a className='text-gray-600 hover:text-gray-800'>Polygon</a>
+								<a
+									href='https://polygon.technology/'
+									className='text-gray-600 hover:text-gray-800'>
+									Polygon
+								</a>
 							</li>
 							<li>
-								<a className='text-gray-600 hover:text-gray-800'>Vercel</a>
+								<a
+									href='https://vercel.com/'
+									className='text-gray-600 hover:text-gray-800'>
+									Vercel
+								</a>
 							</li>
 							<li></li>
 						</nav>

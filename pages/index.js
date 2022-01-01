@@ -83,7 +83,7 @@ export default function Home() {
 					<h2 className='sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5'>
 						This page is empty and that&apos;s great.
 						<img
-							className='object-cover object-center rounded-full w-32 h-32 m-8'
+							className='object-cover object-center rounded-full w-32 h-32 mx-auto my-10 md:m-8'
 							alt='hero'
 							src='https://source.unsplash.com/random/128x128/?space'
 						/>

@@ -216,7 +216,7 @@ export default function CreateItem() {
 				</div>
 			</section>
 
-			<section className='max-w-md mx-auto bg-white rounded-xl shadow-lg shadow-purple-500/50 overflow-hidden md:max-w-4xl '>
+			<section className='max-w-md  bg-white rounded-xl shadow-lg shadow-purple-500/50 overflow-hidden mx-auto md:max-w-4xl'>
 				<div className='md:flex'>
 					<div className='md:shrink-0'>
 						{fileUrl && (
