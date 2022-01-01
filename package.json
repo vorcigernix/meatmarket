@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npx hardhat compile && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "localhat": "export NODE_OPTIONS=--openssl-legacy-provider&& npx hardhat node",
