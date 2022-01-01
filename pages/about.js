@@ -2,42 +2,42 @@ import Link from "next/link";
 export default function About() {
 	return (
 		<>
-			<section class='text-gray-600 body-font text-sm'>
-				<div class='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
-					<div class='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
-						<h1 class='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
+			<section className='text-gray-600 body-font text-sm'>
+				<div className='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
+					<div className='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
+						<h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
 							Hiring market&nbsp;
-							<br class='lg:hidden' />
+							<br className='lg:hidden' />
 							is wrong.
 						</h1>
-						<p class='mb-8 leading-relaxed text-base'>
+						<p className='mb-8 leading-relaxed text-base'>
 							<b>You are non-fungible</b>. Way we discuss about job
 							opportunities is based on centuries old model. It was build in
 							times of factory workers begging for a barely paid job. A human
 							resources department were created on the idea of handling humans
 							as a <b>resources</b>.
 						</p>
-						<div class='container mx-auto flex px-5 py-12 items-center justify-center flex-col'>
-							<div class='text-center lg:w-2/3 w-full'>
-								<h1 class='title-font text-2xl  mb-4 font-medium text-gray-900'>
+						<div className='container mx-auto flex px-5 py-12 items-center justify-center flex-col'>
+							<div className='text-center lg:w-2/3 w-full'>
+								<h1 className='title-font text-2xl  mb-4 font-medium text-gray-900'>
 									This no longer works for
 								</h1>
-								<div class='flex justify-center'>
+								<div className='flex justify-center'>
 									<a href='#you'>
-										<button class='inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-lg'>
+										<button className='inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-lg'>
 											You
 										</button>
 									</a>
-									<span class='justify-center w-8 text-3xl'>+</span>
+									<span className='justify-center w-8 text-3xl'>+</span>
 									<a href='#companies'>
-										<button class='ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg'>
+										<button className='ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg'>
 											Companies
 										</button>
 									</a>
 								</div>
 							</div>
 						</div>
-						<p class='mb-8 leading-relaxed' id='you'>
+						<p className='mb-8 leading-relaxed' id='you'>
 							This may sound unfair and far from your current experience.
 							Companies understood that scarce resources needs a different
 							approach and the experience of knowledge workers today does not
@@ -48,7 +48,7 @@ export default function About() {
 							of that, you end in the discussion you should have on the
 							beginning - what the job is about and if you fit into the team.
 						</p>
-						<p class='mb-8 leading-relaxed'>
+						<p className='mb-8 leading-relaxed'>
 							Our <b>solution</b> is to turn the whole process around. Talent
 							sourcing companies and company HRs find your contact based on
 							skills and locality. They see the public part of the profile:
@@ -59,43 +59,45 @@ export default function About() {
 							offers and in worst case it covers the cost of time you invest in
 							further discussion.
 						</p>
-						<div class='flex justify-center'>
+						<div className='flex justify-center'>
 							<Link href='/create-item'>
-								<button class='inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-lg'>
+								<button className='inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-lg'>
 									Create profile
 								</button>
 							</Link>
 						</div>
 					</div>
-					<div class='lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-purple-500/50'>
+					<div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-purple-500/50'>
 						<img
-							class='object-cover object-center rounded'
+							className='object-cover object-center rounded'
 							alt='hero'
 							src='https://source.unsplash.com/random/720x600/?people'
 						/>
 					</div>
 				</div>
 			</section>
-			<section class='text-gray-600 body-font text-sm'>
-				<div class='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
-					<div class='lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 shadow-lg shadow-purple-500/50'>
+			<section className='text-gray-600 body-font text-sm'>
+				<div className='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
+					<div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 shadow-lg shadow-purple-500/50'>
 						<img
-							class='object-cover object-center rounded'
+							className='object-cover object-center rounded'
 							alt='hero'
 							src='https://source.unsplash.com/random/720x600/?company'
 						/>
 					</div>
-					<div class='lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center'  id='companies'>
-						<h1 class='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
+					<div
+						className='lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center'
+						id='companies'>
+						<h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
 							Let's&nbsp;
-							<br class='lg:hidden' />
+							<br className='lg:hidden' />
 							fix it.
 						</h1>
-						<p class='mb-8 leading-relaxed text-base'>
+						<p className='mb-8 leading-relaxed text-base'>
 							Logical question would be: why would companies buy the contact
 							tokens? There is a LinkedIn and huge amount of job portals.
 						</p>
-						<p class='mb-8 leading-relaxed'>
+						<p className='mb-8 leading-relaxed'>
 							First of all, our portal is not a silver bullet. Companies
 							probably should continue to use the same job portals as they do
 							now. Problem we are solving for companies is that most of
@@ -106,9 +108,9 @@ export default function About() {
 							headhunters. Generally, more <b>human interactions</b> than job
 							portals.
 						</p>
-						<div class='flex justify-center'>
+						<div className='flex justify-center'>
 							<Link href='/'>
-								<button class='inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-lg'>
+								<button className='inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-lg'>
 									Back to profiles
 								</button>
 							</Link>
@@ -116,16 +118,16 @@ export default function About() {
 					</div>
 				</div>
 			</section>
-			<section class='text-gray-600 body-font text-sm'>
-				<div class='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
-					<div class='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
-						<h1 class='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
+			<section className='text-gray-600 body-font text-sm'>
+				<div className='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
+					<div className='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
+						<h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
 							FAQs
 						</h1>
-						<p class='mb-8 leading-relaxed text-base'>
+						<p className='mb-8 leading-relaxed text-base'>
 							Answers to frequently asked questions.
 						</p>
-						<p class='mb-8 leading-relaxed'>
+						<p className='mb-8 leading-relaxed'>
 							<b>
 								I don't know anything about Blockchain or NFTs. How do I start?
 							</b>
@@ -143,11 +145,13 @@ export default function About() {
 								className=' underline'>
 								Metamask video introduction
 							</a>{" "}
-							and installing the Metamask. You don't need to send any funds in
-							advance, just install the plugin and you are ready to go.
+							and installing the Metamask. Link to download Metamask is in a
+							footer of the page. We also provide autoconfiguration link to set
+							up the Polygon network on Metamask. In a nutshell, you click on
+							two links and you are done.
 						</p>
 
-						<p class='mb-8 leading-relaxed' id='faq'>
+						<p className='mb-8 leading-relaxed' id='faq'>
 							<b>So all the data I share are written to the blockchain?</b>
 							<br />
 							Correct. You can think of our application as a easy tool to mint
@@ -155,7 +159,7 @@ export default function About() {
 							is not stored on our servers. This also means that we can't edit
 							the data in future (which is both good and bad).
 						</p>
-						<p class='mb-8 leading-relaxed'>
+						<p className='mb-8 leading-relaxed'>
 							<b>There will be a lot of fake accounts right?</b> <br />
 							Actually, no, not in a huge number. You have to create a card one
 							by one, which is still hard to automate and the security is bound
@@ -164,9 +168,9 @@ export default function About() {
 							any job portal.
 						</p>
 					</div>
-					<div class='lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-purple-500/50'>
+					<div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-purple-500/50'>
 						<img
-							class='object-cover object-center rounded'
+							className='object-cover object-center rounded'
 							alt='hero'
 							src='https://source.unsplash.com/random/720x600/?question'
 						/>

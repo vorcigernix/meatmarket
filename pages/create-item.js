@@ -137,15 +137,15 @@ export default function CreateItem() {
 
 	if (loadingState) {
 		return (
-			<section class='text-gray-600 body-font'>
-				<div class='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
-					<div class='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
-						<h1 class='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
+			<section className='text-gray-600 body-font'>
+				<div className='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
+					<div className='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
+						<h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
 							Before you wink
-							<br class='inline-block' />
+							<br className='inline-block' />
 							your card will be ready
 						</h1>
-						<p class='mb-8 leading-relaxed'>
+						<p className='mb-8 leading-relaxed'>
 							Now we ask for a confirmations from you. First is a "sign" that
 							works the same way as a signature on a paper. Second is actual
 							creation of a card on blockchain. After the transactions are
@@ -169,9 +169,9 @@ export default function CreateItem() {
 							</Link>
 						</div>
 					</div>
-					<div class='lg:max-w-lg lg:w-full md:w-1/2 w-5/6'>
+					<div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6'>
 						<img
-							class='object-cover object-center rounded'
+							className='object-cover object-center rounded'
 							alt='hero'
 							src='contract.svg'
 						/>
