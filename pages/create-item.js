@@ -146,13 +146,13 @@ export default function CreateItem() {
 							your card will be ready
 						</h1>
 						<p className='mb-8 leading-relaxed'>
-							Now we ask for a confirmations from you. First is a "sign" that
+							Now we ask for a confirmations from you. First is a &apos;sign&apos; that
 							works the same way as a signature on a paper. Second is actual
 							creation of a card on blockchain. After the transactions are
 							confirmed, we will redirect you to the main page automatically.
 						</p>
 						<div className='flex md:mt-4 mt-6'>
-							<Link href='/about'>
+							<Link href='/about' passHref>
 								<a className='text-purple-500 inline-flex items-center'>
 									Lost?
 									<svg
@@ -196,7 +196,7 @@ export default function CreateItem() {
 							by setting your level.
 						</p>
 						<div className='flex md:mt-4 mt-6'>
-							<Link href='/about'>
+							<Link href='/about' passHref>
 								<a className='text-purple-500 inline-flex items-center'>
 									Wait, but why
 									<svg
@@ -223,6 +223,7 @@ export default function CreateItem() {
 							<img
 								className='h-48 w-full object-cover md:h-full md:w-72'
 								src={fileUrl}
+								alt="profile picture"
 							/>
 						)}
 						{!fileUrl && (

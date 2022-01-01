@@ -72,7 +72,7 @@ export default function MyAssets() {
 							This is your collection. You can get more on the main page.
 						</p>
 						<div className='flex md:mt-4 mt-6'>
-							<Link href='/'>
+							<Link href='/' passHref>
 								<a className='text-purple-500 inline-flex items-center'>
 									Get more
 									<svg
@@ -122,7 +122,7 @@ export default function MyAssets() {
 								</div>
 								<div className='sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left'>
 									<p className='leading-relaxed text-sm mb-4 inline-flex'>
-										<Link href={nft.linked}>
+										<Link href={nft.linked} passHref>
 											<a>
 												<svg
 													fill='currentColor'
@@ -139,7 +139,7 @@ export default function MyAssets() {
 												</svg>
 											</a>
 										</Link>
-										<Link href={`https://github.com/${nft.github}`}>
+										<Link href={`https://github.com/${nft.github}`} passHref>
 											<a>
 												<svg
 													fill='currentColor'

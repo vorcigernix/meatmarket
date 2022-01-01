@@ -81,7 +81,7 @@ export default function Home() {
 			<section className='text-gray-600 body-font'>
 				<div className='container px-5 py-24 mx-auto flex flex-wrap'>
 					<h2 className='sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5'>
-						This page is empty and that's great.
+						This page is empty and that&apos;s great.
 						<img
 							className='object-cover object-center rounded-full w-32 h-32 m-8'
 							alt='hero'
@@ -94,7 +94,7 @@ export default function Home() {
 							It is empty because all profile cards created in the system are
 							bought already. If you represent a company or agency, it is a
 							great opportunity to finish the first steps decribed{" "}
-							<Link href='/about'>
+							<Link href='/about' passHref>
 								<a className='underline'>here</a>
 							</Link>
 							.
@@ -102,13 +102,13 @@ export default function Home() {
 						<p className='leading-relaxed text-base'>
 							If you are a profesional, looking for a place to create your
 							profile card NFT, even better. Go create your profile quickly{" "}
-							<Link href='/create-item'>
+							<Link href='/create-item' passHref>
 								<a className='underline'>here</a>
 							</Link>{" "}
 							and be among first cards listed on this page.
 						</p>
 						<div className='flex md:mt-4 mt-6'>
-							<Link href='/about'>
+							<Link href='/about' passHref>
 								<a className='text-purple-500 inline-flex items-center'>
 									Help, what is this about?
 									<svg
@@ -202,7 +202,7 @@ export default function Home() {
 											</button>
 											<span className='text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1'></span>
 											<span className='text-gray-900 inline-flex items-center leading-none text-sm'>
-												<img className='w-5 h-5' src='eth.svg' />
+												<img className='w-5 h-5' src='eth.svg' alt="ethereum logo" />
 												{nft.price}
 											</span>
 										</div>

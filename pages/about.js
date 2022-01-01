@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from 'next/image';
 export default function About() {
 	return (
 		<>
@@ -60,7 +61,7 @@ export default function About() {
 							further discussion.
 						</p>
 						<div className='flex justify-center'>
-							<Link href='/create-item'>
+							<Link href='/create-item' passHref>
 								<button className='inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-lg'>
 									Create profile
 								</button>
@@ -89,7 +90,7 @@ export default function About() {
 						className='lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center'
 						id='companies'>
 						<h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
-							Let's&nbsp;
+							Let&apos;s&nbsp;
 							<br className='lg:hidden' />
 							fix it.
 						</h1>
@@ -102,14 +103,14 @@ export default function About() {
 							probably should continue to use the same job portals as they do
 							now. Problem we are solving for companies is that most of
 							experienced professionals have a good job already and they mostly
-							don't spend their time to look at job market. The way they change
+							don&apos;t spend their time to look at job market. The way they change
 							companies is mostly friend referrals, direct conversations on the
 							events and sometimes they can be convinced by a very good
 							headhunters. Generally, more <b>human interactions</b> than job
 							portals.
 						</p>
 						<div className='flex justify-center'>
-							<Link href='/'>
+							<Link href='/' passHref>
 								<button className='inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-lg'>
 									Back to profiles
 								</button>
@@ -129,7 +130,7 @@ export default function About() {
 						</p>
 						<p className='mb-8 leading-relaxed'>
 							<b>
-								I don't know anything about Blockchain or NFTs. How do I start?
+								I don&apos;t know anything about Blockchain or NFTs. How do I start?
 							</b>
 							<br />
 							So, if you are a company, you should start by contacting a
@@ -142,6 +143,7 @@ export default function About() {
 							<a
 								href='https://www.youtube.com/watch?v=YVgfHZMFFFQ'
 								target='_blank'
+								rel='noreferrer'
 								className=' underline'>
 								Metamask video introduction
 							</a>{" "}
@@ -156,14 +158,14 @@ export default function About() {
 							<br />
 							Correct. You can think of our application as a easy tool to mint
 							your personal data NFTs. The data is stored in the blockchain and
-							is not stored on our servers. This also means that we can't edit
+							is not stored on our servers. This also means that we can&apos;t edit
 							the data in future (which is both good and bad).
 						</p>
 						<p className='mb-8 leading-relaxed'>
 							<b>There will be a lot of fake accounts right?</b> <br />
 							Actually, no, not in a huge number. You have to create a card one
 							by one, which is still hard to automate and the security is bound
-							to a wallet. Also, we deny "login" to anyone who posted the fake
+							to a wallet. Also, we deny &apos;login&apos; to anyone who posted the fake
 							before, so it is in fact way easier to create a fake profile on
 							any job portal.
 						</p>
