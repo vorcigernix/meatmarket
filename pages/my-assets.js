@@ -100,7 +100,7 @@ export default function MyAssets() {
 								key={i}
 								className='flex flex-col sm:flex-row md:mt-10 rounded-xl shadow-lg shadow-purple-500/50 p-8 md:p-4'>
 								<div className='sm:w-1/3 text-center sm:pr-8 sm:py-8'>
-									<div className='inline-flex items-center justify-center bg-gray-200 text-gray-400'>
+									<div className='inline-flex items-center justify-center bg-gray-200 text-gray-400 rounded-full'>
 										<img
 											src={nft.image}
 											alt='profile picture'
