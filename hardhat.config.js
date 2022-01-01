@@ -12,7 +12,6 @@ module.exports = {
 		mumbai: {
 			// Infura
 			//url: `https://polygon-mumbai.infura.io/v3/f0671e059fde4ab1a541db0a8ea9aa1d`,
-			//url: "https://rpc-mumbai.maticvigil.com/v1/fcf13c11a7125df23027a029b19043a579a50000",
 			url: `https://polygon-mumbai.g.alchemy.com/v2/elWZjOPfS0H03lYqe4-fSCu7LM4i7HUD`,
 			accounts: [privateKey],
 		},

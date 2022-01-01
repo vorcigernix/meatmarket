@@ -9,8 +9,8 @@ import { nftaddress, nftmarketaddress } from "../config";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
 
-let rpcEndpoint = "https://polygon-mumbai.g.alchemy.com/v2/elWZjOPfS0H03lYqe4-fSCu7LM4i7HUD";
-
+let rpcEndpoint =
+	"https://polygon-mumbai.g.alchemy.com/v2/elWZjOPfS0H03lYqe4-fSCu7LM4i7HUD";
 
 export default function Home() {
 	const [nfts, setNfts] = useState([]);
@@ -130,6 +130,10 @@ export default function Home() {
 		);
 	return (
 		<>
+			<section
+				className={`h-1 my-2 bg-gradient-to-l from-pink-500  via-purple-500 to-pink-500 background-animate ${
+					loadingState == "loaded" && "hidden"
+				}`}></section>
 			<section className='text-gray-600 body-font'>
 				<div className='container px-5 py-24 mx-auto flex flex-wrap'>
 					<h2 className='sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5'>
