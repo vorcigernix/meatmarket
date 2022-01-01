@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
 
+import addPolygonNetwork from "/components/injectPolygon";
+
 import { nftmarketaddress, nftaddress } from "../config";
 
 import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
@@ -16,6 +18,7 @@ export default function CreatorDashboard() {
 		loadNFTs();
 	}, []);
 	async function loadNFTs() {
+		addPolygonNetwork();
 		const web3Modal = new Web3Modal({
 			network: "mainnet",
 			cacheProvider: true,

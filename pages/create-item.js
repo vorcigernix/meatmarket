@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Web3Modal from "web3modal";
 import { useDropzone } from "react-dropzone";
 import Link from "next/link";
+import addPolygonNetwork from "/components/injectPolygon";
 
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
@@ -29,6 +30,7 @@ export default function CreateItem() {
 	const [loadingState, setLoadingState] = useState(false);
 	const router = useRouter();
 	useEffect(() => {
+		addPolygonNetwork();
 		async function loadLocation(url) {
 			const _response = await fetch(url);
 			_response = await _response.json();
