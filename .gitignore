@@ -2,7 +2,7 @@
 
 .secret
 .infuraid
-config.js
+# config.js
 
 # dependencies
 /node_modules
@@ -40,5 +40,5 @@ yarn-error.log*
 node_modules
 
 #Hardhat files
-cache
-artifacts
+#cache
+#artifacts
