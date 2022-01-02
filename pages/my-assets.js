@@ -161,10 +161,24 @@ export default function MyAssets() {
 										</Link>
 										{nft.skills}
 									</p>
+									<p className='leading-relaxed text-sm mb-4 flex'>
+										<svg
+											xmlns='http://www.w3.org/2000/svg'
+											className='h-5 w-5 mr-2'
+											viewBox='0 0 20 20'
+											fill='currentColor'>
+											<path
+												fillRule='evenodd'
+												d='M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z'
+												clipRule='evenodd'
+											/>
+										</svg>{" "}
+										{nft.location}
+									</p>
 									<p className='leading-relaxed text-lg mb-4'>
 										{nft.description}
 									</p>
-									<a className='text-purple-500 inline-flex items-center'>
+									<a href="https://opensea.io" className='text-purple-500 inline-flex items-center'>
 										Market
 										<svg
 											fill='none'
