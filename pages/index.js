@@ -19,9 +19,6 @@ export default function Home() {
 		loadNFTs();
 	}, []);
 	async function loadNFTs() {
-		//const web3Modal = new Web3Modal();
-		//const connection = await web3Modal.connect();
-		//const provider = new ethers.providers.Web3Provider(connection);
 
 		const provider = new ethers.providers.JsonRpcProvider(rpcEndpoint);
 		//const provider = new ethers.providers.InfuraProvider("maticmum", {projectId: "f0671e059fde4ab1a541db0a8ea9aa1d",projectSecret: "056ae48abd6d4f0682f5df28258d3ea2",});
