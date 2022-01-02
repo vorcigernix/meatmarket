@@ -72,15 +72,16 @@ export default function CreatorDashboard() {
 					{nfts.map((nft, i) => (
 						<div key={i} className='xl:w-1/3 md:w-1/2 p-4'>
 							<div className='rounded-xl shadow-lg shadow-purple-500/50 p-6'>
-								<div className='w-10 h-10 inline-flex items-center justify-center rounded-full bg-purple-100 text-purple-500 mb-4'>
+								<div className='inline-flex items-center justify-center mb-4'>
 									<img
-										src={nft.image}
+										className='object-cover object-center rounded-full w-14 h-14 mx-auto my-4 mr-4'
 										alt='profile picture'
-										className='rounded-full'
+										src={nft.image}
 									/>
+									<span>{nft.name}</span>
 								</div>
 								<h2 className='text-lg text-gray-900 font-medium title-font mb-2'>
-									{nft.name}{" "}
+									
 									{nft.sold && (
 										<span className='text-green-500 text-sm'>
 											<svg
