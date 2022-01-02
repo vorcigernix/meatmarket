@@ -136,7 +136,7 @@ export default function Home() {
 						Younf Profiles
 					</h2>
 					<div className='md:w-3/5 md:pl-6'>
-						{loadingState === "loading" ? (
+						{loadingState === "not-loaded" ? (
 							<p className='leading-relaxed text-base'>
 								We are loading the profiles from smart contract, please wait. By buying them, you get a
 								direct contact information.

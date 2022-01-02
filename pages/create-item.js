@@ -154,9 +154,9 @@ export default function CreateItem() {
 							confirmed, we will redirect you to the main page automatically.
 						</p>
 						<div className='flex md:mt-4 mt-6'>
-							<Link href='/about' passHref>
+							<Link href='mailto:support@younf.com' passHref>
 								<a className='text-purple-500 inline-flex items-center'>
-									Lost?
+									Issues?
 									<svg
 										fill='none'
 										stroke='currentColor'
