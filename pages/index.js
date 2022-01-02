@@ -19,7 +19,6 @@ export default function Home() {
 		loadNFTs();
 	}, []);
 	async function loadNFTs() {
-
 		const provider = new ethers.providers.JsonRpcProvider(rpcEndpoint);
 		//const provider = new ethers.providers.InfuraProvider("maticmum", {projectId: "f0671e059fde4ab1a541db0a8ea9aa1d",projectSecret: "056ae48abd6d4f0682f5df28258d3ea2",});
 		//const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.infura.io/v3/f0671e059fde4ab1a541db0a8ea9aa1d");
@@ -137,10 +136,17 @@ export default function Home() {
 						Younf Profiles
 					</h2>
 					<div className='md:w-3/5 md:pl-6'>
-						<p className='leading-relaxed text-base'>
-							These are Younf profiles you can buy. By buying them, you get a
-							direct contact information.
-						</p>
+						{loadingState === "loading" ? (
+							<p className='leading-relaxed text-base'>
+								We are loading the profiles from smart contract, please wait. By buying them, you get a
+								direct contact information.
+							</p>
+						) : (
+							<p className='leading-relaxed text-base'>
+								These are Younf profiles you can buy. By buying them, you get a
+								direct contact information.
+							</p>
+						)}
 						<div className='flex md:mt-4 mt-6'>
 							<Link href='/about'>
 								<a className='text-purple-500 inline-flex items-center'>
@@ -199,7 +205,11 @@ export default function Home() {
 											</button>
 											<span className='text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1'></span>
 											<span className='text-gray-900 inline-flex items-center leading-none text-sm'>
-												<img className='w-5 h-5' src='eth.svg' alt="ethereum logo" />
+												<img
+													className='w-5 h-5'
+													src='eth.svg'
+													alt='ethereum logo'
+												/>
 												{nft.price}
 											</span>
 										</div>
