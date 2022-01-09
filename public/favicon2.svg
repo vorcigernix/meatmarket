@@ -1,0 +1,27 @@
+<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient xlink:href="#a" id="b" cx="12.12" cy="11.345" fx="12.12" fy="11.345" r="9.232" gradientTransform="matrix(1 0 0 1.04105 0 -.466)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="a">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#skyGradient)" stroke="url(#b)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m11.81 2.234 9.043 3.596v9.09L11.81 9.53ZM3.388 4.521v8.438l8.422-3.43V2.235Z"/>
+    <path d="m3.388 12.959 8.386 7.498 9.079-5.536L11.81 9.53z" fill-rule="evenodd"/>
+    <path d="m3.388 4.521 8.386 5.002 9.079-3.693-9.043-3.596Z"/>
+    <path style="mix-blend-mode:normal" d="M11.774 9.523v10.934l9.079-5.536V5.83Z" fill="#a855f7" fill-opacity=".707"/>
+    <path d="m3.388 4.521 8.386 5.002v10.934l-8.386-7.498Z"/>
+  </g>
+  <defs>
+    <linearGradient id="skyGradient" x1="100%" y1="100%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity=".5">
+        <animate attributeName="stop-color" values="#ec4899;blue;red;red;purple;#ec4899" dur="14s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity=".5">
+        <animate attributeName="stop-color" values="lightblue;orange;purple;orange;lightblue" dur="14s" repeatCount="indefinite" />
+        <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="14s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+</defs>
+</svg>

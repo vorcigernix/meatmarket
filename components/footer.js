@@ -6,22 +6,7 @@ const Footer = () => {
 			<div className='container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col'>
 				<div className='w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10'>
 					<a className='flex title-font font-medium items-center md:justify-start justify-center text-gray-900'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							stroke='currentColor'
-							strokeLinecap='round'
-							strokeLinejoin='round'
-							strokeWidth='2'
-							className='w-10 h-10 text-white p-2 bg-gradient-to-l from-pink-500  via-purple-500 to-pink-500 background-animate rounded-full'
-							viewBox='0 0 24 24'>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								d='M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4'
-							/>
-						</svg>
+						<img src='favicon2.svg' alt='Younf' className="h-16 w-16" />
 						<span className='ml-3 text-xl'>Younf</span>
 					</a>
 					<p className='mt-2 text-sm text-gray-500'>You are non fungible.</p>

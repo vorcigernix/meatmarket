@@ -7,7 +7,7 @@ function Marketplace({ Component, pageProps }) {
 		<Layout>
 			<Head>
 				<link rel='shortcut icon' href='/favicon.svg' />
-				<title>Younf: You are non fungible</title>
+				<title>Younf: You are not fungible</title>
 				<meta
 					name='description'
 					content='Younf turns around the conversation about jobs and revolutionize the hiring market.'
@@ -20,7 +20,7 @@ function Marketplace({ Component, pageProps }) {
 					property='og:description'
 					content='Younf turns around the conversation about jobs and revolutionize the hiring market.'
 				/>
-				<meta property='og:image' content='https://younf.com/og.jpg' />
+				<meta property='og:image' content='https://younf.com/og.png' />
 
 				<meta name='twitter:card' content='summary_large_image' />
 				<meta property='twitter:domain' content='younf.com' />
@@ -30,7 +30,7 @@ function Marketplace({ Component, pageProps }) {
 					name='twitter:description'
 					content='Younf turns around the conversation about jobs and revolutionize the hiring market.'
 				/>
-				<meta name='twitter:image' content='https://younf.com/og.jpg' />
+				<meta name='twitter:image' content='https://younf.com/og.png' />
 			</Head>
 			<Component {...pageProps} />
 		</Layout>
