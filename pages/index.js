@@ -1,225 +1,138 @@
-import { ethers } from "ethers";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Web3Modal from "web3modal";
 import Link from "next/link";
 
-import { nftaddress, nftmarketaddress } from "../config";
+const Page = () => {
+  return (
+    <>
+      <section className="text-gray-600 dark:text-gray-400 ">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium dark:text-white">
+              Hiring market&nbsp;
+              <br className="hidden lg:inline-block" />
+              is wrong
+            </h1>
+            <p className="mb-8 leading-relaxed ">
+              <b>You are non-fungible</b>. Way we discuss job opportunities is
+              based on centuries old model. It was build in times of factory
+              workers begging for a barely paid job. A human resources
+              departments were created on the idea of handling humans as a&nbsp;
+              <b>resources</b>.
+            </p>
+            <div className="flex justify-center">
+              <Link href="/create-item" passHref>
+                <button className="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded font-sans ">
+                  Create profile
+                </button>
+              </Link>
+              <Link href="/profiles" passHref>
+                <button className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded font-sans">
+                  Show profiles
+                </button>
+              </Link>
+            </div>
+            <p className="my-8 leading-relaxed">
+              We elevate the conversation between the companies and a senior
+              specialists. Specialized knowledge workers usually have a very
+              good jobs and they typically not respond to the offers. On Younf
+              the specialists create an NFT &quot;business card&quot; and any
+              company can buy it in order to get a direct contact information.
+              For specialists, there is a fee covering the time they spent
+              discussing the job offer. For companies, there is a market of
+              higly specialized knowledge workers.
+            </p>
+          </div>
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-pink-500/50">
+            <img
+              className="object-cover object-center rounded"
+              alt="hero"
+              src="https://source.unsplash.com/random/720x600/?factory"
+            />
+          </div>
+        </div>
+      </section>
+      <section className="text-gray-600 dark:text-gray-400 ">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10 shadow-lg shadow-pink-500/50">
+            <img
+              className="object-cover object-center rounded"
+              alt="hero"
+              src="https://source.unsplash.com/random/720x600/?software"
+            />
+          </div>
+          <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium dark:text-white">
+              Changing the game&nbsp;
+              <br className="hidden lg:inline-block" />
+              for the knowledge workers
+            </h1>
+            <p className="mb-8 leading-relaxed">
+              We are software developers ourselves. We know how bad is a
+              conversation you usually have with recruiters. It is not their
+              fault, the system is obsolete. We are here to change it.
+            </p>
+            <div className="flex justify-center">
+              <Link href="/create-item" passHref>
+                <button className="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded font-sans">
+                  Create profile
+                </button>
+              </Link>
+            </div>
+            <p className="my-8 leading-relaxed">
+              When company buys NFT card with your profile, it presents an
+              upfront investment - this alone turns the conversation around. It
+              covers the expense of the time you spend discussing the offer and
+              it incentivize the recriters to prepare better for the
+              conversation.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="text-gray-600 dark:text-gray-400 ">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium dark:text-white">
+              Changing the conversation&nbsp;
+              <br className="hidden lg:inline-block" />
+              for recruiters
+            </h1>
+            <p className="mb-8 leading-relaxed">
+              Yes, we ask you to pay for the information that you can possibly
+              find &quot;for free&quot;. There are two reasons why this make
+              sense for you. First, we have some unique profiles. Some people
+              would not create a LinkedIn/other portal profile. They have a good
+              job and have zero intent to do so. The way they are changing the
+              position is usually by a normal human conversation with someone
+              from a different company. If you are a good recruiter, you
+              actually have experience with this from several meetups,
+              conferences and other similar events.
+            </p>
+            <div className="flex justify-center">
+              <Link href="/profiles" passHref>
+                <button className="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded font-sans">
+                  Show profiles
+                </button>
+              </Link>
+            </div>
+            <p className="my-8 leading-relaxed">
+              Second, even if you find someone on LinkedIn, you have to pay for
+              that. The concept of a job portal is built to provide a quantity.
+              You probably know how much you actually pay for a good candidate
+              and yet, the person on other end may have very limited motivation
+              to talk with you. Actually, more experienced people are, less
+              motivated they are to change the job.
+            </p>
+          </div>
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-pink-500/50">
+            <img
+              className="object-cover object-center rounded"
+              alt="hero"
+              src="https://source.unsplash.com/random/720x600/?company"
+            />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
 
-import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
-import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
-
-let rpcEndpoint =
-	"https://polygon-mumbai.g.alchemy.com/v2/elWZjOPfS0H03lYqe4-fSCu7LM4i7HUD";
-
-export default function Home() {
-	const [nfts, setNfts] = useState([]);
-	const [loadingState, setLoadingState] = useState("not-loaded");
-	useEffect(() => {
-		loadNFTs();
-	}, []);
-	async function loadNFTs() {
-		const provider = new ethers.providers.JsonRpcProvider(rpcEndpoint);
-		//const provider = new ethers.providers.InfuraProvider("maticmum", {projectId: "f0671e059fde4ab1a541db0a8ea9aa1d",projectSecret: "056ae48abd6d4f0682f5df28258d3ea2",});
-		//const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.infura.io/v3/f0671e059fde4ab1a541db0a8ea9aa1d");
-		//const provider = new ethers.providers.InfuraProvider("maticmum", { projectId: "f0671e059fde4ab1a541db0a8ea9aa1d",});
-		//const provider = new ethers.providers.InfuraProvider("ropsten","f0671e059fde4ab1a541db0a8ea9aa1d");
-
-		const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
-		const marketContract = new ethers.Contract(
-			nftmarketaddress,
-			Market.abi,
-			provider
-		);
-		const data = await marketContract.fetchMarketItems();
-
-		const items = await Promise.all(
-			data.map(async (i) => {
-				const tokenUri = await tokenContract.tokenURI(i.tokenId);
-				const meta = await axios.get(tokenUri);
-				let price = ethers.utils.formatUnits(i.price.toString(), "ether");
-				let item = {
-					price,
-					itemId: i.itemId.toNumber(),
-					seller: i.seller,
-					owner: i.owner,
-					image: meta.data.image,
-					name: meta.data.name,
-					location: meta.data.location,
-					description: meta.data.description,
-				};
-				return item;
-			})
-		);
-		setNfts(items);
-		setLoadingState("loaded");
-	}
-	async function buyNft(nft) {
-		const web3Modal = new Web3Modal();
-		const connection = await web3Modal.connect();
-		const provider = new ethers.providers.Web3Provider(connection);
-		const signer = provider.getSigner();
-		const contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
-
-		const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
-		const transaction = await contract.createMarketSale(
-			nftaddress,
-			nft.itemId,
-			{
-				value: price,
-			}
-		);
-		await transaction.wait();
-		loadNFTs();
-	}
-	if (loadingState === "loaded" && !nfts.length)
-		return (
-			<section className='text-gray-600 body-font'>
-				<div className='container px-5 py-24 mx-auto flex flex-wrap'>
-					<h2 className='sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5'>
-						This page is empty and that&apos;s great.
-						<img
-							className='object-cover object-center rounded-full w-32 h-32 mx-auto my-10 md:m-8'
-							alt='hero'
-							src='https://source.unsplash.com/random/128x128/?space'
-						/>
-					</h2>
-
-					<div className='md:w-3/5 md:pl-6'>
-						<p className='leading-relaxed text-base pb-8'>
-							It is empty because all profile cards created in the system are
-							bought already. If you represent a company or agency, it is a
-							great opportunity to finish the first steps decribed{" "}
-							<Link href='/about' passHref>
-								<a className='underline'>here</a>
-							</Link>
-							.
-						</p>
-						<p className='leading-relaxed text-base'>
-							If you are a profesional, looking for a place to create your
-							profile card NFT, even better. Go create your profile quickly{" "}
-							<Link href='/create-item' passHref>
-								<a className='underline'>here</a>
-							</Link>{" "}
-							and be among first cards listed on this page.
-						</p>
-						<div className='flex md:mt-4 mt-6'>
-							<Link href='/about' passHref>
-								<a className='text-purple-500 inline-flex items-center'>
-									Help, what is this about?
-									<svg
-										fill='none'
-										stroke='currentColor'
-										strokeLinecap='round'
-										strokeLinejoin='round'
-										strokeWidth='2'
-										className='w-4 h-4 ml-2'
-										viewBox='0 0 24 24'>
-										<path d='M5 12h14M12 5l7 7-7 7'></path>
-									</svg>
-								</a>
-							</Link>
-						</div>
-					</div>
-				</div>
-			</section>
-		);
-	return (
-		<>
-			<section
-				className={`h-1 my-2 bg-gradient-to-l from-pink-500  via-purple-500 to-pink-500 background-animate ${
-					loadingState == "loaded" && "hidden"
-				}`}></section>
-			<section className='text-gray-600 body-font'>
-				<div className='container px-5 py-24 mx-auto flex flex-wrap'>
-					<h2 className='sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5'>
-						Younf Profiles
-					</h2>
-					<div className='md:w-3/5 md:pl-6'>
-						{loadingState === "not-loaded" ? (
-							<p className='leading-relaxed text-base'>
-								We are loading the profiles from smart contract, please wait. By buying them, you get a
-								direct contact information.
-							</p>
-						) : (
-							<p className='leading-relaxed text-base'>
-								These are Younf profiles you can buy. By buying them, you get a
-								direct contact information.
-							</p>
-						)}
-						<div className='flex md:mt-4 mt-6'>
-							<Link href='/about'>
-								<a className='text-purple-500 inline-flex items-center'>
-									Wait, but why
-									<svg
-										fill='none'
-										stroke='currentColor'
-										strokeLinecap='round'
-										strokeLinejoin='round'
-										strokeWidth='2'
-										className='w-4 h-4 ml-2'
-										viewBox='0 0 24 24'>
-										<path d='M5 12h14M12 5l7 7-7 7'></path>
-									</svg>
-								</a>
-							</Link>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section className='text-gray-600 body-font'>
-				<div className='container px-5 pb-24 mx-auto'>
-					<div className='flex flex-wrap -m-4 '>
-						{nfts.map((nft, i) => (
-							<div key={i} className='p-1 md:w-1/3 lg:w-1/4  '>
-								<div className='h-full  rounded-lg overflow-hidden shadow-lg shadow-purple-500/50'>
-									<img
-										className='lg:h-96 md:h-80 w-full object-cover object-center'
-										src={nft.image}
-										alt={nft.name}
-									/>
-									<div className='p-6'>
-										<h2 className='tracking-widest text-xs title-font font-medium text-gray-400 mb-1'>
-											{nft.location}
-										</h2>
-										<h1 className='title-font text-lg font-medium text-gray-900 mb-3'>
-											{nft.name}
-										</h1>
-										<p className='leading-relaxed mb-3'>{nft.description}</p>
-										<div className='flex items-center flex-wrap '>
-											<button
-												className='text-purple-500 inline-flex items-center md:mb-2 lg:mb-0'
-												onClick={() => buyNft(nft)}>
-												Get
-												<svg
-													className='w-4 h-4 ml-2'
-													viewBox='0 0 24 24'
-													stroke='currentColor'
-													strokeWidth='2'
-													fill='none'
-													strokeLinecap='round'
-													strokeLinejoin='round'>
-													<path d='M5 12h14'></path>
-													<path d='M12 5l7 7-7 7'></path>
-												</svg>
-											</button>
-											<span className='text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1'></span>
-											<span className='text-gray-900 inline-flex items-center leading-none text-sm'>
-												<img
-													className='w-5 h-5'
-													src='eth.svg'
-													alt='ethereum logo'
-												/>
-												{nft.price}
-											</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
-		</>
-	);
-}
+export default Page;

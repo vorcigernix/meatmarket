@@ -2,58 +2,58 @@ import addPolygonNetwork from "./injectPolygon";
 
 const Footer = () => {
 	return (
-		<footer className='text-gray-600 body-font text-sm'>
+		<footer className='text-zinc-600  text-sm'>
 			<div className='container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col'>
 				<div className='w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10'>
-					<a className='flex title-font font-medium items-center md:justify-start justify-center text-gray-900'>
-						<img src='favicon2.svg' alt='Younf' className="h-16 w-16" />
+					<a className='flex title-font font-medium items-center md:justify-start justify-center text-zinc-900 dark:text-zinc-200'>
+						<img src='favicon.svg' alt='Younf' className="h-16 w-16" />
 						<span className='ml-3 text-xl'>Younf</span>
 					</a>
-					<p className='mt-2 text-sm text-gray-500'>You are non fungible.</p>
+					<p className='mt-2 text-sm text-zinc-500'>You are non fungible.</p>
 				</div>
 				<div className='flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first'>
 					<div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-						<h2 className='title-font font-medium text-gray-900 tracking-widest text-sm mb-3'>
+						<h2 className='title-font font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
 							Setup
 						</h2>
 						<nav className='list-none mb-10'>
 							<li>
 								<a
 									href='https://metamask.io/download.html'
-									className='text-gray-600 hover:text-gray-800'>
+									className='text-zinc-600 hover:text-zinc-800'>
 									Install MetaMask
 								</a>
 							</li>
 							<li>
 								<button
 									onClick={() => addPolygonNetwork()}
-									className='text-gray-600 hover:text-gray-800 text-left'>
+									className='text-zinc-600 hover:text-zinc-800 text-left'>
 									Add Polygon network to MetaMask
 								</button>
 							</li>
 						</nav>
 					</div>
 					<div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-						<h2 className='title-font font-medium text-gray-900 tracking-widest text-sm mb-3'>
+						<h2 className='title-font font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
 							Our Policies
 						</h2>
 						<nav className='list-none mb-10'>
 							<li>
-								<a href='tos.pdf' className='text-gray-600 hover:text-gray-800'>
+								<a href='tos.pdf' className='text-zinc-600 hover:text-zinc-800'>
 									Terms of Use
 								</a>
 							</li>
 							<li>
 								<a
 									href='privacy.pdf'
-									className='text-gray-600 hover:text-gray-800'>
+									className='text-zinc-600 hover:text-zinc-800'>
 									Cookies
 								</a>
 							</li>
 							<li>
 								<a
 									href='privacy.pdf'
-									className='text-gray-600 hover:text-gray-800'>
+									className='text-zinc-600 hover:text-zinc-800'>
 									Privacy policy
 								</a>
 							</li>
@@ -61,28 +61,28 @@ const Footer = () => {
 						</nav>
 					</div>
 					<div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-						<h2 className='title-font font-medium text-gray-900 tracking-widest text-sm mb-3'>
+						<h2 className='title-font font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
 							Technology
 						</h2>
 						<nav className='list-none mb-10'>
 							<li>
 								<a
 									href='https://ethereum.org/en/'
-									className='text-gray-600 hover:text-gray-800'>
+									className='text-zinc-600 hover:text-zinc-800'>
 									Ethereum
 								</a>
 							</li>
 							<li>
 								<a
 									href='https://polygon.technology/'
-									className='text-gray-600 hover:text-gray-800'>
+									className='text-zinc-600 hover:text-zinc-800'>
 									Polygon
 								</a>
 							</li>
 							<li>
 								<a
 									href='https://vercel.com/'
-									className='text-gray-600 hover:text-gray-800'>
+									className='text-zinc-600 hover:text-zinc-800'>
 									Vercel
 								</a>
 							</li>
@@ -90,28 +90,28 @@ const Footer = () => {
 						</nav>
 					</div>
 					<div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-						<h2 className='title-font font-medium text-gray-900 tracking-widest text-sm mb-3'>
+						<h2 className='title-font font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
 							Contacts
 						</h2>
 						<nav className='list-none mb-10'>
 							<li>
 								<a
 									href='https://twitter.com/vorcigernix'
-									className='text-gray-600 hover:text-gray-800'>
+									className='text-zinc-600 hover:text-zinc-800'>
 									Twitter
 								</a>
 							</li>
 							<li>
 								<a
 									href='https://www.linkedin.com/in/adamsobotka'
-									className='text-gray-600 hover:text-gray-800'>
+									className='text-zinc-600 hover:text-zinc-800'>
 									LinkedIn
 								</a>
 							</li>
 							<li>
 								<a
 									href='mailto:marketing@younf.com'
-									className='text-gray-600 hover:text-gray-800'>
+									className='text-zinc-600 hover:text-zinc-800'>
 									E-mail
 								</a>
 							</li>
@@ -120,14 +120,14 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<div className='bg-gray-100'>
+			<div className='bg-zinc-100'>
 				<div className='container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row'>
-					<p className='text-gray-500 text-sm text-center sm:text-left'>
+					<p className='text-zinc-500 text-sm text-center sm:text-left'>
 						© 2022 Younf - All rights reserved.
 					</p>
 					<span className='inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start'>
 						<a
-							className='ml-3 text-gray-500'
+							className='ml-3 text-zinc-500'
 							href='https://twitter.com/vorcigernix'
 							rel='noopener noreferrer'>
 							<svg
@@ -141,7 +141,7 @@ const Footer = () => {
 							</svg>
 						</a>
 						<a
-							className='ml-3 text-gray-500'
+							className='ml-3 text-zinc-500'
 							href='https://www.linkedin.com/in/adamsobotka'
 							rel='noopener noreferrer'>
 							<svg

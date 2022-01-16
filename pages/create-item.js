@@ -139,15 +139,15 @@ export default function CreateItem() {
 
 	if (loadingState) {
 		return (
-			<section className='text-gray-600 body-font'>
+			<section className='text-gray-600 '>
 				<div className='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
 					<div className='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
-						<h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
+						<h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-200'>
 							Before you wink
 							<br className='inline-block' />
 							your card will be ready
 						</h1>
-						<p className='mb-8 leading-relaxed'>
+						<p className='mb-8 leading-relaxed dark:text-gray-400'>
 							Now we ask for a confirmations from you. First is a &apos;sign&apos; that
 							works the same way as a signature on a paper. Second is actual
 							creation of a card on blockchain. After the transactions are
@@ -155,7 +155,7 @@ export default function CreateItem() {
 						</p>
 						<div className='flex md:mt-4 mt-6'>
 							<Link href='mailto:support@younf.com' passHref>
-								<a className='text-purple-500 inline-flex items-center'>
+								<a className='text-pink-500 inline-flex items-center'>
 									Issues?
 									<svg
 										fill='none'
@@ -185,13 +185,13 @@ export default function CreateItem() {
 
 	return (
 		<>
-			<section className='text-gray-600 body-font'>
+			<section className='text-gray-600 '>
 				<div className='container px-5 py-24 mx-auto flex flex-wrap'>
-					<h2 className='sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5'>
-						Create Younf Profile
+					<h2 className='sm:text-3xl text-2xl text-gray-900 dark:text-gray-200 font-medium title-font mb-2 md:w-2/5'>
+						Create Profile
 					</h2>
 					<div className='md:w-3/5 md:pl-6'>
-						<p className='leading-relaxed text-base'>
+						<p className='leading-relaxed text-base dark:text-gray-400'>
 							Younf profile is like free business card in NFT token. You put the
 							card to the marketplace and whoever buys the card get a direct
 							contact information. You get 95% of the price you set on the card
@@ -199,7 +199,7 @@ export default function CreateItem() {
 						</p>
 						<div className='flex md:mt-4 mt-6'>
 							<Link href='/about' passHref>
-								<a className='text-purple-500 inline-flex items-center'>
+								<a className='text-pink-500 inline-flex items-center'>
 									Wait, but why
 									<svg
 										fill='none'
@@ -218,7 +218,7 @@ export default function CreateItem() {
 				</div>
 			</section>
 
-			<section className='max-w-md  bg-white rounded-xl shadow-lg shadow-purple-500/50 overflow-hidden mx-auto md:max-w-4xl'>
+			<section className='max-w-md  bg-white dark:bg-zinc-900 rounded-xl shadow-lg shadow-pink-500/50 overflow-hidden mx-auto md:max-w-4xl'>
 				<div className='md:flex'>
 					<div className='md:shrink-0'>
 						{fileUrl && (
@@ -232,7 +232,7 @@ export default function CreateItem() {
 							<div
 								{...getRootProps({
 									className:
-										"h-48 md:h-full md:w-72 bg-gradient-to-tl from-purple-500 to-pink-200 justify-center items-center text-center p-8 text-xs flex flex-col text-white",
+										"h-48 md:h-full md:w-72 bg-gradient-to-tl from-pink-500 to-pink-200 dark:to-pink-900 justify-center items-center text-center p-8 text-xs flex flex-col text-white",
 								})}>
 								<input {...getInputProps()} />
 								<svg
@@ -293,7 +293,7 @@ export default function CreateItem() {
 						<input
 							required
 							placeholder='Skills (separated by commas)'
-							className='w-full border rounded p-2'
+							className='w-full border rounded p-4 mt-2'
 							onChange={(e) =>
 								updateFormInput({ ...formInput, skills: e.target.value })
 							}
@@ -332,20 +332,20 @@ export default function CreateItem() {
 								}
 							/>
 						</div>
-						<div className='flex mt-2 border rounded p-4 text-gray-400'>
+						<div className='flex mt-2  rounded p-4 text-gray-400'>
 							<span className='mr-3'>Level</span>
 							<button
-								className='border-2 border-gray-100 bg-white focus:border-purple-400 rounded-full w-6 h-6 focus:outline-none'
+								className='border-2 border-gray-100 bg-white focus:border-pink-400 rounded-full w-6 h-6 focus:outline-none'
 								onClick={(e) =>
 									updateFormInput({ ...formInput, price: "0.01" })
 								}></button>
 							<button
-								className='border-2 border-gray-100 ml-1 focus:border-purple-400 bg-purple-200 rounded-full w-6 h-6 focus:outline-none'
+								className='border-2 border-gray-100 ml-1 focus:border-pink-400 bg-pink-200 rounded-full w-6 h-6 focus:outline-none'
 								onClick={(e) =>
 									updateFormInput({ ...formInput, price: "0.03" })
 								}></button>
 							<button
-								className='border-2 border-gray-100 ml-1 focus:border-purple-900 bg-purple-500 rounded-full w-6 h-6 focus:outline-none'
+								className='border-2 border-gray-100 ml-1 focus:border-pink-900 bg-pink-500 rounded-full w-6 h-6 focus:outline-none'
 								onClick={(e) =>
 									updateFormInput({ ...formInput, price: "0.1" })
 								}></button>
