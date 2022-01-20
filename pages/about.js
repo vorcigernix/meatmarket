@@ -11,7 +11,7 @@ export default function About() {
 							Answers to frequently asked questions.
 						</p>
 						<p className='mb-8 leading-relaxed'>
-							<b>
+							<b className=" text-pink-400">
 								I don&apos;t know anything about Blockchain or NFTs. How do I start?
 							</b>
 							<br />
@@ -36,7 +36,7 @@ export default function About() {
 						</p>
 
 						<p className='mb-8 leading-relaxed' id='faq'>
-							<b>So all the data I share are written to the blockchain?</b>
+							<b className=" text-pink-400">So all the data I share are written to the blockchain?</b>
 							<br />
 							Correct. You can think of our application as a easy tool to mint
 							your personal data NFTs. The data is stored in the blockchain and
@@ -44,7 +44,7 @@ export default function About() {
 							the data in future (which is both good and bad).
 						</p>
 						<p className='mb-8 leading-relaxed'>
-							<b>There will be a lot of fake accounts right?</b> <br />
+							<b className=" text-pink-400">There will be a lot of fake accounts right?</b> <br />
 							Actually, no, not in a huge number. You have to create a card one
 							by one, which is still hard to automate and the security is bound
 							to a wallet. Also, we deny &apos;login&apos; to anyone who posted the fake

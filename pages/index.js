@@ -12,11 +12,12 @@ const Page = () => {
               is wrong
             </h1>
             <p className="mb-8 leading-relaxed ">
-              <b>You are non-fungible</b>. Way we discuss job opportunities is
-              based on centuries old model. It was build in times of factory
-              workers begging for a barely paid job. A human resources
-              departments were created on the idea of handling humans as a&nbsp;
-              <b>resources</b>.
+              <b className=" text-pink-400">You are non-fungible</b>. Way we
+              discuss job opportunities is based on centuries old model. It was
+              build in times of factory workers begging for a barely paid job. A
+              human resources departments were created on the idea of handling
+              humans as a&nbsp;
+              <b className=" text-pink-400">resources</b>.
             </p>
             <div className="flex justify-center">
               <Link href="/create-item" passHref>
@@ -78,8 +79,9 @@ const Page = () => {
             </h1>
             <p className="mb-8 leading-relaxed">
               We are software developers ourselves. We know how bad is a
-              conversation you usually have with recruiters. It is not their
-              fault, the system is obsolete. We are here to change it.
+              <b className=" text-pink-400"> conversation</b> you usually have
+              with recruiters. It is not their fault, the system is obsolete. We
+              are here to change it.
             </p>
             <div className="flex justify-center">
               <Link href="/create-item" passHref>
@@ -108,10 +110,11 @@ const Page = () => {
             </h1>
             <p className="mb-8 leading-relaxed">
               Yes, we ask you to pay for the information that you can possibly
-              find &quot;for free&quot;. There are two reasons why this make
-              sense for you. First, we have some unique profiles. Some people
-              would not create a LinkedIn/other portal profile. They have a good
-              job and have zero intent to do so. The way they are changing the
+              find &quot;for free&quot;. There are{" "}
+              <b className=" text-pink-400"> two reasons</b> why this make sense
+              for you. <b className="dark:text-white">First</b>, we have some unique profiles. Some people would
+              not create a LinkedIn/other portal profile. They have a good job
+              and have zero intent to do so. The way they are changing the
               position is usually by a normal human conversation with someone
               from a different company. If you are a good recruiter, you
               actually have experience with this from several meetups,
@@ -125,12 +128,13 @@ const Page = () => {
               </Link>
             </div>
             <p className="my-8 leading-relaxed">
-              Second, even if you find someone on LinkedIn, you have to pay for
+            <b className=" dark:text-white">Second</b>, even if you find someone on LinkedIn, you have to pay for
               that. The concept of a job portal is built to provide a quantity.
               You probably know how much you actually pay for a good candidate
-              and yet, the person on other end may have very limited motivation
-              to talk with you. Actually, more experienced people are, less
-              motivated they are to change the job.
+              and yet, the person on other end may have very{" "}
+              <b className=" text-pink-400"> limited motivation </b>
+              in continuing discussion. Actually, more experienced people are,
+              less motivated they are to change the job.
             </p>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-pink-500/50">

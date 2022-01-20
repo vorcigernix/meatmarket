@@ -11,10 +11,10 @@ const Hero = () => {
             is wrong
           </h1>
           <p className="mb-8 leading-relaxed">
-            <b>You are non-fungible</b>. Way we discuss job opportunities
+            <b className=" text-pink-400">You are non-fungible</b>. Way we discuss job opportunities
             is based on centuries old model. It was build in times of factory
             workers begging for a barely paid job. A human resources departments
-            were created on the idea of handling humans as a <b>resources</b>.
+            were created on the idea of handling humans as a <b className=" text-pink-400">resources</b>.
           </p>
           <div className="flex justify-center">
             <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
