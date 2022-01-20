@@ -1,15 +1,15 @@
 import Link from "next/link";
 const Nav = () => {
   return (
-    <header className="text-zinc-600 dark:text-zinc-400 ">
+    <header className="text-zinc-600 dark:text-zinc-400">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/" passHref>
-          <a className="flex title-font font-medium items-center  mb-4 md:mb-0">
+          <a className="flex font-title font-medium items-center  mb-4 md:mb-0">
             <img src="favicon.svg" alt="Younf" className="w-28 h-28" />
-            <span className="ml-3 dark:text-white text-4xl">Younf</span>
+            <span className="ml-3 dark:text-white text-4xl font-display">Younf</span>
           </a>
         </Link>
-        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <nav className="md:ml-auto flex flex-wrap items-center space-x-12 text-base justify-center">
         <Link href="/profiles" passHref>
             <a className="mr-5 hover:text-gray-400">Profiles</a>
           </Link>

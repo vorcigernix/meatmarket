@@ -76,7 +76,7 @@ export default function Profiles() {
     return (
       <section className="text-zinc-600 ">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <h2 className="sm:text-3xl text-2xl text-zinc-900 font-medium title-font mb-2 md:w-2/5">
+          <h2 className="sm:text-3xl text-2xl text-zinc-900 font-medium font-title mb-2 md:w-2/5">
             This page is empty and that&apos;s great.
             <img
               className="object-cover object-center rounded-full w-32 h-32 mx-auto my-10 md:m-8"
@@ -134,7 +134,7 @@ export default function Profiles() {
       ></section>
       <section className="text-zinc-600 ">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <h2 className="sm:text-3xl text-2xl text-zinc-900 dark:text-zinc-400 font-medium title-font mb-2 md:w-2/5">
+          <h2 className="sm:text-3xl text-2xl text-zinc-900 dark:text-zinc-400 font-medium font-title mb-2 md:w-2/5">
             Younf Profiles
           </h2>
           <div className="md:w-3/5 md:pl-6">
@@ -184,10 +184,10 @@ export default function Profiles() {
                       alt={nft.name}
                     />
                     <div className="p-6">
-                      <h2 className="tracking-widest text-xs title-font font-medium text-zinc-400 mb-1">
+                      <h2 className="tracking-widest text-xs font-title font-medium text-zinc-400 mb-1">
                         {nft.location}
                       </h2>
-                      <h1 className="title-font text-lg font-medium text-zinc-900 dark:text-zinc-200 mb-3">
+                      <h1 className="font-title text-lg font-medium text-zinc-900 dark:text-zinc-200 mb-3">
                         {nft.name}
                       </h1>
                       <p className="leading-relaxed mb-3 text-zinc-800 dark:text-zinc-400 ">{nft.description}</p>

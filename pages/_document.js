@@ -4,8 +4,20 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
-        <body className="bg-white dark:bg-zinc-900 font-mono">
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;500&family=Source+Sans+Pro&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+
+        <body className="bg-white dark:bg-zinc-900 font-body text-lg">
           <Main />
           <NextScript />
         </body>

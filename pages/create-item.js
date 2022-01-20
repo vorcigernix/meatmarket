@@ -142,12 +142,12 @@ export default function CreateItem() {
 			<section className='text-gray-600 '>
 				<div className='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
 					<div className='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
-						<h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-200'>
+						<h1 className='font-title sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-200'>
 							Before you wink
 							<br className='inline-block' />
 							your card will be ready
 						</h1>
-						<p className='mb-8 leading-relaxed dark:text-gray-400'>
+						<p className='mb-8 leading-relaxed dark:text-gray-300'>
 							Now we ask for a confirmations from you. First is a &apos;sign&apos; that
 							works the same way as a signature on a paper. Second is actual
 							creation of a card on blockchain. After the transactions are
@@ -187,11 +187,11 @@ export default function CreateItem() {
 		<>
 			<section className='text-gray-600 '>
 				<div className='container px-5 py-24 mx-auto flex flex-wrap'>
-					<h2 className='sm:text-3xl text-2xl text-gray-900 dark:text-gray-200 font-medium title-font mb-2 md:w-2/5'>
+					<h2 className='sm:text-3xl text-2xl text-gray-900 dark:text-gray-200 font-medium font-title mb-2 md:w-2/5'>
 						Create Profile
 					</h2>
 					<div className='md:w-3/5 md:pl-6'>
-						<p className='leading-relaxed text-base dark:text-gray-400'>
+						<p className='leading-relaxed text-base dark:text-gray-300'>
 							Younf profile is like free business card in NFT token. You put the
 							card to the marketplace and whoever buys the card get a direct
 							contact information. You get 95% of the price you set on the card

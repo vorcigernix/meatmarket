@@ -2,10 +2,10 @@ import addPolygonNetwork from "./injectPolygon";
 
 const Footer = () => {
 	return (
-		<footer className='text-zinc-600  text-sm'>
+		<footer className='text-zinc-600'>
 			<div className='container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col'>
 				<div className='w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10'>
-					<a className='flex title-font font-medium items-center md:justify-start justify-center text-zinc-900 dark:text-zinc-200'>
+					<a className='flex font-title font-medium items-center md:justify-start justify-center text-zinc-900 dark:text-zinc-200'>
 						<img src='favicon.svg' alt='Younf' className="h-16 w-16" />
 						<span className='ml-3 text-xl'>Younf</span>
 					</a>
@@ -13,7 +13,7 @@ const Footer = () => {
 				</div>
 				<div className='flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first'>
 					<div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-						<h2 className='title-font font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
+						<h2 className='font-title font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
 							Setup
 						</h2>
 						<nav className='list-none mb-10'>
@@ -34,7 +34,7 @@ const Footer = () => {
 						</nav>
 					</div>
 					<div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-						<h2 className='title-font font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
+						<h2 className='font-title font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
 							Our Policies
 						</h2>
 						<nav className='list-none mb-10'>
@@ -61,7 +61,7 @@ const Footer = () => {
 						</nav>
 					</div>
 					<div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-						<h2 className='title-font font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
+						<h2 className='font-title font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
 							Technology
 						</h2>
 						<nav className='list-none mb-10'>
@@ -90,7 +90,7 @@ const Footer = () => {
 						</nav>
 					</div>
 					<div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-						<h2 className='title-font font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
+						<h2 className='font-title font-medium text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-3'>
 							Contacts
 						</h2>
 						<nav className='list-none mb-10'>

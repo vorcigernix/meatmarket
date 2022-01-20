@@ -65,9 +65,9 @@ export default function CreatorDashboard() {
   }
   if (loadingState === "loaded" && !nfts.length)
     return (
-      <section className="text-gray-600 dark:text-gray-400 ">
+      <section className="text-gray-600 dark:text-gray-300 ">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <h2 className="sm:text-3xl text-2xl text-gray-900 dark:text-gray-400 font-medium title-font mb-2 md:w-2/5">
+          <h2 className="sm:text-3xl text-2xl text-gray-900 dark:text-gray-300 font-medium font-title mb-2 md:w-2/5">
             No Contacts Created
           </h2>
           <div className="md:w-3/5 md:pl-6">
@@ -112,7 +112,7 @@ export default function CreatorDashboard() {
                   />
                   <span>{nft.name}</span>
                 </div>
-                <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
+                <h2 className="text-lg text-gray-900 font-medium font-title mb-2">
                   {nft.sold && (
                     <span className="text-green-500 text-sm">
                       <svg
