@@ -74,7 +74,7 @@ export default function MyAssets() {
             </p>
             <div className="flex md:mt-4 mt-6">
               <Link href="/profiles" passHref>
-                <a className="text-pink-500 inline-flex items-center">
+                <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
                   Get contacts
                   <svg
                     fill="none"
@@ -107,7 +107,7 @@ export default function MyAssets() {
             </p>
             <div className="flex md:mt-4 mt-6">
               <Link href="/profiles" passHref>
-                <a className="text-pink-500 inline-flex items-center">
+                <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
                   Get more
                   <svg
                     fill="none"

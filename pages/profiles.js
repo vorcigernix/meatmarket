@@ -105,7 +105,7 @@ export default function Profiles() {
             </p>
             <div className="flex md:mt-4 mt-6">
               <Link href="/about" passHref>
-                <a className="text-pink-500 inline-flex items-center">
+                <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
                   Help, what is this about?
                   <svg
                     fill="none"
@@ -151,7 +151,7 @@ export default function Profiles() {
             )}
             <div className="flex md:mt-4 mt-6">
               <Link href="/about">
-                <a className="text-pink-500 inline-flex items-center">
+                <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
                   Wait, but why
                   <svg
                     fill="none"
