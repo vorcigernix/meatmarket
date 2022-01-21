@@ -17,7 +17,7 @@ const Page = () => {
               build in times of factory workers begging for a barely paid job. A
               human resources departments were created on the idea of handling
               humans as a&nbsp;
-              <b className=" text-pink-400">resources</b>.
+              <b className=" dark:text-white">resources</b>.
             </p>
             <div className="flex justify-center">
               <Link href="/create-item" passHref>

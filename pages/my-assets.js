@@ -64,18 +64,39 @@ export default function MyAssets() {
   if (loadingState === "loaded" && !nfts.length)
     return (
       <section className="text-gray-600 dark:text-gray-300 ">
-        <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <h2 className="sm:text-3xl text-2xl text-gray-900 dark:text-gray-300 font-medium font-title mb-2 md:w-2/5">
-            No Contacts Found
-          </h2>
-          <div className="md:w-3/5 md:pl-6">
-            <p className="leading-relaxed text-base">
-              There is no contacts in your collection. You can get more on the profiles page.
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium dark:text-white">
+              We found&nbsp;
+              <br className="hidden lg:inline-block" />
+              no profiles
+            </h1>
+            <p className="mb-2 leading-relaxed ">
+              <b className=" text-pink-400">How to get started.</b> From a
+              technology standpoint, you can be ready to get started with Younf
+              in a few minutes. You need to{" "}
+              <a
+                className=" dark:text-white font-bold"
+                href="https://metamask.io/download.html"
+              >
+                install a wallet
+              </a>{" "}
+              and send a funds to it.
             </p>
-            <div className="flex md:mt-4 mt-6">
+            <p className="mb-8 leading-relaxed ">
+              We know that this is not how companies operate though. Best way to
+              start would be probably to reach out to a consultant experienced
+              in blockchain and web3 technologies.
+            </p>
+            <div className="flex justify-center">
+              <Link href="https://metamask.io/download.html" passHref>
+                <button className="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded font-sans ">
+                  Install wallet
+                </button>
+              </Link>
               <Link href="/profiles" passHref>
-                <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
-                  Get contacts
+                <a className="text-pink-500 inline-flex items-center ml-6 hover:underline underline-offset-8 decoration-2">
+                  Show profiles
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -90,6 +111,19 @@ export default function MyAssets() {
                 </a>
               </Link>
             </div>
+            <p className="my-8 leading-relaxed">
+              You need to cover a regulation, accounting and tax obligations and
+              security concerns to be able to use Younf as a legal entity. You
+              are welcome to try our product as an individual though and we will
+              do our best to help your teams to onboard.
+            </p>
+          </div>
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-pink-500/50">
+            <img
+              className="object-cover object-center rounded"
+              alt="hero"
+              src="https://source.unsplash.com/random/720x600/?empty"
+            />
           </div>
         </div>
       </section>
