@@ -54,22 +54,32 @@ const Page = () => {
             </p>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-pink-500/50">
-            <img
-              className="object-cover object-center rounded"
-              alt="hero"
-              src="https://source.unsplash.com/random/720x600/?factory"
-            />
+            <picture>
+              <source srcSet="/images/1.avif" type="image/avif" />
+              <img
+                className="object-cover object-center rounded"
+                decoding="async"
+                loading="lazy"
+                src="/images/1.jpg"
+                alt="hero image"
+              />
+            </picture>
           </div>
         </div>
       </section>
       <section className="text-gray-600 dark:text-gray-300 ">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10 shadow-lg shadow-pink-500/50">
-            <img
-              className="object-cover object-center rounded"
-              alt="hero"
-              src="https://source.unsplash.com/random/720x600/?software"
-            />
+            <picture>
+              <source srcSet="/images/3.avif" type="image/avif" />
+              <img
+                className="object-cover object-center rounded"
+                decoding="async"
+                loading="lazy"
+                src="/images/3.jpg"
+                alt="hero image"
+              />
+            </picture>
           </div>
           <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
             <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium dark:text-white">
@@ -112,13 +122,13 @@ const Page = () => {
               Yes, we ask you to pay for the information that you can possibly
               find &quot;for free&quot;. There are{" "}
               <b className=" text-pink-400"> two reasons</b> why this make sense
-              for you. <b className="dark:text-white">First</b>, we have some unique profiles. Some people would
-              not create a LinkedIn/other portal profile. They have a good job
-              and have zero intent to do so. The way they are changing the
-              position is usually by a normal human conversation with someone
-              from a different company. If you are a good recruiter, you
-              actually have experience with this from several meetups,
-              conferences and other similar events.
+              for you. <b className="dark:text-white">First</b>, we have some
+              unique profiles. Some people would not create a LinkedIn/other
+              portal profile. They have a good job and have zero intent to do
+              so. The way they are changing the position is usually by a normal
+              human conversation with someone from a different company. If you
+              are a good recruiter, you actually have experience with this from
+              several meetups, conferences and other similar events.
             </p>
             <div className="flex justify-center">
               <Link href="/profiles" passHref>
@@ -128,21 +138,27 @@ const Page = () => {
               </Link>
             </div>
             <p className="my-8 leading-relaxed">
-            <b className=" dark:text-white">Second</b>, even if you find someone on LinkedIn, you have to pay for
-              that. The concept of a job portal is built to provide a quantity.
-              You probably know how much you actually pay for a good candidate
-              and yet, the person on other end may have very{" "}
+              <b className=" dark:text-white">Second</b>, even if you find
+              someone on LinkedIn, you have to pay for that. The concept of a
+              job portal is built to provide a quantity. You probably know how
+              much you actually pay for a good candidate and yet, the person on
+              other end may have very{" "}
               <b className=" text-pink-400"> limited motivation </b>
               in continuing discussion. Actually, more experienced people are,
               less motivated they are to change the job.
             </p>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-pink-500/50">
-            <img
-              className="object-cover object-center rounded"
-              alt="hero"
-              src="https://source.unsplash.com/random/720x600/?company"
-            />
+            <picture>
+              <source srcSet="/images/5.avif" type="image/avif" />
+              <img
+                className="object-cover object-center rounded"
+                decoding="async"
+                loading="lazy"
+                src="/images/5.jpg"
+                alt="hero image"
+              />
+            </picture>
           </div>
         </div>
       </section>

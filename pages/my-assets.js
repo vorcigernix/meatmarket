@@ -119,11 +119,16 @@ export default function MyAssets() {
             </p>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-pink-500/50">
-            <img
-              className="object-cover object-center rounded"
-              alt="hero"
-              src="https://source.unsplash.com/random/720x600/?empty"
-            />
+          <picture>
+              <source srcSet="/images/4.avif" type="image/avif" />
+              <img
+                className="object-cover object-center rounded"
+                decoding="async"
+                loading="lazy"
+                src="/images/4.jpg"
+                alt="hero image"
+              />
+            </picture>
           </div>
         </div>
       </section>

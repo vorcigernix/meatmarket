@@ -174,11 +174,16 @@ export default function CreateItem() {
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img
-              className="object-cover object-center rounded"
-              alt="hero"
-              src="contract.svg"
-            />
+          <picture>
+              <source srcSet="/images/3.avif" type="image/avif" />
+              <img
+                className="object-cover object-center rounded"
+                decoding="async"
+                loading="lazy"
+                src="/images/3.jpg"
+                alt="hero image"
+              />
+            </picture>
           </div>
         </div>
       </section>

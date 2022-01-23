@@ -78,11 +78,16 @@ export default function Profiles() {
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           <h2 className="sm:text-3xl text-2xl text-zinc-900 font-medium font-title mb-2 md:w-2/5">
             This page is empty and that&apos;s great.
-            <img
-              className="object-cover object-center rounded-full w-32 h-32 mx-auto my-10 md:m-8"
-              alt="hero"
-              src="https://source.unsplash.com/random/128x128/?space"
-            />
+            <picture>
+              <source srcSet="/images/4.avif" type="image/avif" />
+              <img
+                className="object-cover object-center rounded"
+                decoding="async"
+                loading="lazy"
+                src="/images/4.jpg"
+                alt="hero image"
+              />
+            </picture>
           </h2>
 
           <div className="md:w-3/5 md:pl-6">
