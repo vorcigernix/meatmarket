@@ -66,18 +66,49 @@ export default function CreatorDashboard() {
   if (loadingState === "loaded" && !nfts.length)
     return (
       <section className="text-gray-600 dark:text-gray-300 ">
-        <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <h2 className="sm:text-3xl text-2xl text-gray-900 dark:text-gray-300 font-medium font-title mb-2 md:w-2/5">
-            No Contacts Created
-          </h2>
-          <div className="md:w-3/5 md:pl-6">
-            <p className="leading-relaxed text-base">
-              There is no profile cards created by you.
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium dark:text-white">
+              You created&nbsp;
+              <br className="hidden lg:inline-block" />
+              no profiles
+            </h1>
+            <p className="mb-2 leading-relaxed ">
+              <b className=" text-pink-400">How to get started.</b> If you
+              don&apos;t have any wallet installed, you should start by
+              <a
+                className=" dark:text-white font-bold"
+                href="https://metamask.io/download.html"
+              >
+                {" "}
+                installing Metamask
+              </a>{" "}
+              and sending a funds to it.
             </p>
-            <div className="flex md:mt-4 mt-6">
+            <p className="mb-8 leading-relaxed ">
+              While other wallets may work, we support only Metamask. If you are
+              new to the blockchain, you should start by learning more about
+              Ethereum{" "}
+              <a
+                href="https://ethereum.org/en/"
+                rel="noreferrer"
+                target="_blank"
+                className="font-bold dark:text-white"
+              >
+                here
+              </a>
+              . Ethereum is a decentralized platform that runs smart contracts,
+              NFT itself is only a type of smart contract.
+            </p>
+            <div className="flex justify-center">
+              <Link href="https://metamask.io/download.html" passHref>
+                <button className="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded font-sans ">
+                  Install wallet
+                </button>
+              </Link>
               <Link href="/create-item" passHref>
-                <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
-                  Create profile
+                <a className="text-pink-500 inline-flex items-center ml-6 hover:underline underline-offset-8 decoration-2">
+                  Create profiles
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -92,6 +123,28 @@ export default function CreatorDashboard() {
                 </a>
               </Link>
             </div>
+            <p className="my-8 leading-relaxed">
+              If you have a wallet installed, you should receive a dialog that
+              add a Polygon network to your wallet and switch to this network.
+              This is perfectly legitimate, but if you don&apos;t want us to
+              configure your wallet, you can create follow a guide{" "}
+              <a
+                href="https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/"
+                rel="noreferrer"
+                target="_blank"
+                className="font-bold dark:text-white"
+              >
+                here
+              </a>
+              . With wallet set
+            </p>
+          </div>
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-pink-500/50">
+            <img
+              className="object-cover object-center rounded"
+              alt="hero"
+              src="https://source.unsplash.com/random/720x600/?empty"
+            />
           </div>
         </div>
       </section>
