@@ -10,6 +10,7 @@ import { nftmarketaddress, nftaddress } from "../config";
 
 import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
+import Loader from "../components/loader";
 
 export default function CreatorDashboard() {
   const [nfts, setNfts] = useState([]);
@@ -140,7 +141,7 @@ export default function CreatorDashboard() {
             </p>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 shadow-lg shadow-pink-500/50">
-          <picture>
+            <picture>
               <source srcSet="/images/3.avif" type="image/avif" />
               <img
                 className="object-cover object-center rounded"
@@ -155,55 +156,141 @@ export default function CreatorDashboard() {
       </section>
     );
   return (
-    <section className="text-gray-600 ">
-      <div className="container px-5 py-24 mx-auto">
-        <h2 className="text-2xl py-2">Created Cards</h2>
-        <div className="flex flex-wrap -m-4">
-          {nfts.map((nft, i) => (
-            <div key={i} className="xl:w-1/3 md:w-1/2 p-4">
-              <div className="rounded-xl shadow-lg shadow-pink-500/50 p-6">
-                <div className="inline-flex items-center justify-center mb-4">
-                  <img
-                    className="object-cover object-center rounded-full w-14 h-14 mx-auto my-4 mr-4"
-                    alt="profile picture"
-                    src={nft.image}
-                  />
-                  <span>{nft.name}</span>
-                </div>
-                <h2 className="text-lg text-gray-900 font-medium font-title mb-2">
-                  {nft.sold && (
-                    <span className="text-green-500 text-sm">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                        />
-                      </svg>
-                      Sold
-                    </span>
-                  )}
-                </h2>
-                <p className="leading-relaxed text-base">{nft.description}</p>
-
-                <div className="w-12 h-1 bg-pink-500 rounded mt-2 mb-4"></div>
-                <p className=" text-sm">{nft.skills}</p>
-                <p>{nft.price} ETH</p>
-                {nft.sold && (
-                  <p className="text-sm  break-all">Owner: {nft.owner}</p>
-                )}
-              </div>
+    <>
+      <section className="text-gray-600 dark:text-gray-300 ">
+        <div className="container px-5 py-24 mx-auto flex flex-wrap">
+          <h2 className="sm:text-3xl pl-5 text-2xl text-gray-900 dark:text-gray-300 font-medium font-title mb-2 md:w-2/5">
+            Your Contact Cards
+          </h2>
+          <div className="md:w-3/5 md:pl-6">
+            <p className="leading-relaxed text-base">
+              This is a collection of NFTs you have created. They can be bought
+              here on Younf or you can list them on the marketplace like{" "}
+              <a href="https://opensea.io/" target="_blank" rel="noreferrer">
+                OpenSea
+              </a>
+              .
+            </p>
+            <div className="flex md:mt-4 mt-6">
+              <Link href="/profiles" passHref>
+                <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
+                  Get more
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </Link>
             </div>
-          ))}
+          </div>
         </div>
+      </section>
+      <section>
+        <div className="container px-5 pb-24 mx-auto">
+          <div key="wrapper" className="flex flex-wrap space-x-5 space-y-5">
+            <Loader loadingState={loadingState}></Loader>
+            {nfts.map((nft, i) => (
+              <div key={`token${i}`} className="p-1 md:w-1/4 lg:w-1/5  ">
+                <div className="h-full dark:bg-zinc-900 rounded-lg overflow-hidden shadow-lg shadow-pink-500/50">
+                  <img
+                    className="lg:h-72 md:h-72 w-full object-cover object-center"
+                    src={nft.image}
+                    alt={nft.name}
+                  />
+                  <div className="p-6">
+                    <h2 className="tracking-widest text-xs font-title font-medium text-zinc-400 mb-1">
+                      {nft.location}
+                    </h2>
+                    <h1 className="text-lg font-medium text-zinc-900 dark:text-zinc-200 mb-3">
+                      {nft.name}
+                    </h1>
+                    <p className="leading-relaxed mb-3 h-16 text-zinc-800 dark:text-zinc-400 ">
+                      {nft.description}
+                    </p>
+                    <div className="flex items-center flex-wrap ">
+                      {nft.sold && (
+                        <a
+                          className="text-pink-500 inline-flex items-center md:mb-2 lg:mb-0 text-sm"
+                          target="_blank"
+                          rel="noreferrer"
+                          href={`https://mumbai.polygonscan.com/address/${nft.owner}`}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5 mr-1"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                            />
+                          </svg>
+                          Owned
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function x() {
+  return (
+    <div key={i} className="xl:w-1/3 md:w-1/2 p-4">
+      <div className="rounded-xl shadow-lg shadow-pink-500/50 p-6">
+        <div className="inline-flex items-center justify-center mb-4">
+          <img
+            className="object-cover object-center rounded-full w-14 h-14 mx-auto my-4 mr-4"
+            alt="profile picture"
+            src={nft.image}
+          />
+          <span>{nft.name}</span>
+        </div>
+        <h2 className="text-lg text-gray-900 font-medium font-title mb-2">
+          {nft.sold && (
+            <span className="text-green-500 text-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                />
+              </svg>
+              Sold
+            </span>
+          )}
+        </h2>
+        <p className="leading-relaxed text-base">{nft.description}</p>
+
+        <div className="w-12 h-1 bg-pink-500 rounded mt-2 mb-4"></div>
+        <p className=" text-sm">{nft.skills}</p>
+        <p>{nft.price} ETH</p>
+        {nft.sold && <p className="text-sm  break-all">Owner: {nft.owner}</p>}
       </div>
-    </section>
+    </div>
   );
 }

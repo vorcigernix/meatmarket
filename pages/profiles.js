@@ -8,6 +8,7 @@ import { nftaddress, nftmarketaddress } from "../config";
 
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
+import Loader  from "../components/loader";
 
 let rpcEndpoint =
   "https://polygon-mumbai.g.alchemy.com/v2/elWZjOPfS0H03lYqe4-fSCu7LM4i7HUD";
@@ -132,32 +133,21 @@ export default function Profiles() {
     );
   return (
     <>
-      <section
-        className={`h-1 my-2 bg-gradient-to-l from-pink-500  via-pink-500 to-pink-500 background-animate ${
-          loadingState == "loaded" && "hidden"
-        }`}
-      ></section>
       <section className="text-zinc-600 ">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <h2 className="sm:text-3xl text-2xl text-zinc-900 dark:text-zinc-400 font-medium font-title mb-2 md:w-2/5">
+          <h2 className="sm:text-3xl pl-5 text-2xl text-zinc-900 dark:text-zinc-400 font-medium font-title mb-2 md:w-2/5">
             Younf Profiles
           </h2>
           <div className="md:w-3/5 md:pl-6">
-            {loadingState === "not-loaded" ? (
-              <p className="leading-relaxed text-base">
-                We are loading the profiles from smart contract, please wait. By
-                buying them, you get a direct contact information.
-              </p>
-            ) : (
-              <p className="leading-relaxed text-base dark:text-zinc-400">
-                These are Younf profiles you can buy. By buying them, you get a
-                direct contact information.
-              </p>
-            )}
+            <p className="leading-relaxed text-base dark:text-zinc-400">
+              These are Younf profiles you can buy. By buying them, you get a
+              direct contact information.
+            </p>
+
             <div className="flex md:mt-4 mt-6">
               <Link href="/about">
                 <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
-                  Wait, but why
+                  More details
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -175,60 +165,61 @@ export default function Profiles() {
           </div>
         </div>
       </section>
-      <section className="">
+      <section>
         <div className="container px-5 pb-24 mx-auto">
-          <div className="flex flex-wrap -m-4 ">
+          <div key="wrapper" className="flex flex-wrap space-x-5 space-y-5">
+            <Loader loadingState={loadingState}></Loader>
+
             {nfts.map((nft, i) => (
-              <>
-               
-                <div key={i} className="p-1 md:w-1/4 lg:w-1/5  ">
-                  <div className="h-full dark:bg-zinc-900  rounded-lg overflow-hidden shadow-lg shadow-pink-500/50">
-                    <img
-                      className="lg:h-72 md:h-72 w-full object-cover object-center"
-                      src={nft.image}
-                      alt={nft.name}
-                    />
-                    <div className="p-6">
-                      <h2 className="tracking-widest text-xs font-title font-medium text-zinc-400 mb-1">
-                        {nft.location}
-                      </h2>
-                      <h1 className="font-title text-lg font-medium text-zinc-900 dark:text-zinc-200 mb-3">
-                        {nft.name}
-                      </h1>
-                      <p className="leading-relaxed mb-3 text-zinc-800 dark:text-zinc-400 ">{nft.description}</p>
-                      <div className="flex items-center flex-wrap ">
-                        <button
-                          className="text-pink-500 inline-flex items-center md:mb-2 lg:mb-0"
-                          onClick={() => buyNft(nft)}
+              <div key={`card${i}`} className="p-1 md:w-1/4 lg:w-1/5  ">
+                <div className="h-full dark:bg-zinc-900 rounded-lg overflow-hidden shadow-lg shadow-pink-500/50">
+                  <img
+                    className="lg:h-72 md:h-72 w-full object-cover object-center"
+                    src={nft.image}
+                    alt={nft.name}
+                  />
+                  <div className="p-6">
+                    <h2 className="tracking-widest text-xs font-title font-medium text-zinc-400 mb-1">
+                      {nft.location}
+                    </h2>
+                    <h1 className="text-lg font-medium text-zinc-900 dark:text-zinc-200 mb-3">
+                      {nft.name}
+                    </h1>
+                    <p className="leading-relaxed mb-3 h-16 text-zinc-800 dark:text-zinc-400 ">
+                      {nft.description}
+                    </p>
+                    <div className="flex items-center flex-wrap ">
+                      <button
+                        className="text-pink-500 inline-flex items-center md:mb-2 lg:mb-0"
+                        onClick={() => buyNft(nft)}
+                      >
+                        Get
+                        <svg
+                          className="w-4 h-4 ml-2"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         >
-                          Get
-                          <svg
-                            className="w-4 h-4 ml-2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M5 12h14"></path>
-                            <path d="M12 5l7 7-7 7"></path>
-                          </svg>
-                        </button>
-                        <span className="text-zinc-400 dark:text-zinc-300 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1"></span>
-                        <span className="text-zinc-900 dark:text-zinc-200 inline-flex items-center leading-none text-sm">
-                          <img
-                            className="w-5 h-5"
-                            src="eth.svg"
-                            alt="ethereum logo"
-                          />
-                          {nft.price}
-                        </span>
-                      </div>
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                      </button>
+                      <span className="text-zinc-400 dark:text-zinc-300 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1"></span>
+                      <span className="text-zinc-900 dark:text-zinc-200 inline-flex items-center leading-none text-sm">
+                        <img
+                          className="w-5 h-5"
+                          src="eth.svg"
+                          alt="ethereum logo"
+                        />
+                        {nft.price}
+                      </span>
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
             ))}
           </div>
         </div>

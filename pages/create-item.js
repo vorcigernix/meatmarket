@@ -330,14 +330,14 @@ export default function CreateItem() {
             </div>
             <div className="flex flex-col md:flex-row">
               <input
-                placeholder="Github Name"
+                placeholder="Github URL"
                 className="w-full mt-2 mr-2 border rounded p-2"
                 onChange={(e) =>
                   updateFormInput({ ...formInput, github: e.target.value })
                 }
               />
               <input
-                placeholder="LinkedIn"
+                placeholder="LinkedIn URL"
                 className="w-full mt-2 border rounded p-2"
                 onChange={(e) =>
                   updateFormInput({ ...formInput, linked: e.target.value })
