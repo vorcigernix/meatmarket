@@ -20,7 +20,7 @@ export default function CreatorDashboard() {
     loadNFTs();
   }, []);
   async function loadNFTs() {
-    addPolygonNetwork();
+    await addPolygonNetwork();
     const web3Modal = new Web3Modal({
       network: "mainnet",
       cacheProvider: true,

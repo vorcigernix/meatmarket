@@ -17,10 +17,10 @@ export default function MyAssets() {
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
   useEffect(() => {
-    addPolygonNetwork();
     loadNFTs();
   }, []);
   async function loadNFTs() {
+    await addPolygonNetwork();
     const web3Modal = new Web3Modal({
       network: "mainnet",
       cacheProvider: true,
