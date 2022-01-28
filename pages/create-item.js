@@ -174,7 +174,7 @@ export default function CreateItem() {
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          <picture>
+            <picture>
               <source srcSet="/images/3.avif" type="image/avif" />
               <img
                 className="object-cover object-center rounded"
@@ -226,7 +226,7 @@ export default function CreateItem() {
         </div>
       </section>
 
-      <section className="max-w-md  bg-white dark:bg-zinc-900 rounded-xl shadow-lg shadow-pink-500/50 overflow-hidden mx-auto md:max-w-4xl">
+      <section className="max-w-md  bg-white dark:bg-zinc-800 rounded-xl shadow-lg shadow-pink-500/50 overflow-hidden mx-auto md:max-w-2xl lg:max-w-4xl">
         <div className="md:flex">
           <div className="md:shrink-0">
             {fileUrl && (
@@ -274,75 +274,159 @@ export default function CreateItem() {
                   </svg>
                   {location}
                 </span>
+                <div className="pt-4 flex flex-col">
+                  {formInput.skills &&
+                    formInput.skills.split(",").map((s) => (
+                      <span
+                        className=" bg-white text-black rounded p-1 m-2"
+                        key={s}
+                      >
+                        {s}&nbsp;
+                      </span>
+                    ))}
+                </div>
               </div>
             )}
           </div>
 
           <div className="p-8 text-base md:text-sm">
             {!location && (
-              <div className=" bg-gradient-to-tl from-pink-700 text-center to-pink-400 text-white rounded-3xl m-4 p-4">
+              <div className=" bg-gradient-to-tl from-pink-700 text-center to-pink-400 text-white rounded p-4">
                 We ask for your location to store country level information
                 only.
               </div>
             )}
-            <input
-              required
-              placeholder="Full Name"
-              className="w-full mt-2 border rounded p-4"
-              onChange={(e) =>
-                updateFormInput({ ...formInput, name: e.target.value })
-              }
-            />
-            <textarea
-              required
-              placeholder="About me"
-              className="w-full mt-2 border rounded p-4"
-              onChange={(e) =>
-                updateFormInput({ ...formInput, description: e.target.value })
-              }
-            />
-            <input
-              required
-              placeholder="Skills (separated by commas)"
-              className="w-full border rounded p-4 mt-2"
-              onChange={(e) =>
-                updateFormInput({ ...formInput, skills: e.target.value })
-              }
-            />
+            <div className="relative mt-2">
+              <input
+                required
+                id="name"
+                name="name"
+                type="text"
+                className="peer p-4 h-10 w-full border-b-2 rounded border-gray-300 text-gray-900 placeholder-transparent focus:outline-none invalid:border-pink-600"
+                placeholder="Full Name"
+                onChange={(e) =>
+                  updateFormInput({ ...formInput, name: e.target.value })
+                }
+              />
+              <label
+                htmlFor="name"
+                className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+              >
+                Full Name
+              </label>
+            </div>
+            <div className="relative mt-6">
+              <textarea
+                required
+                id="aboutme"
+                name="aboutme"
+                type="text"
+                className="peer p-4  w-full border-b-2 rounded border-gray-300 text-gray-900 placeholder-transparent focus:outline-none invalid:border-pink-600"
+                placeholder="About Me"
+                onChange={(e) =>
+                  updateFormInput({ ...formInput, description: e.target.value })
+                }
+              />
+              <label
+                htmlFor="aboutme"
+                className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+              >
+                About Me
+              </label>
+            </div>
+
+            <div className="relative mt-6">
+              <input
+                required
+                id="skills"
+                name="skills"
+                type="text"
+                className="peer p-4 h-10 w-full border-b-2 rounded border-gray-300 text-gray-900 placeholder-transparent focus:outline-none invalid:border-pink-600"
+                placeholder="Skills"
+                onChange={(e) =>
+                  updateFormInput({ ...formInput, skills: e.target.value })
+                }
+              />
+              <label
+                htmlFor="name"
+                className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+              >
+                Skills (separated by commas)
+              </label>
+            </div>
+
             <div className="flex flex-col md:flex-row">
-              <input
-                required
-                placeholder="E-mail"
-                className="w-full mt-4 mr-2 border rounded p-2"
-                onChange={(e) =>
-                  updateFormInput({ ...formInput, email: e.target.value })
-                }
-              />
-              <input
-                type="tel"
-                required
-                placeholder="Phone number"
-                className="w-full mt-4 border rounded p-2"
-                onChange={(e) =>
-                  updateFormInput({ ...formInput, mobile: e.target.value })
-                }
-              />
+              <div className="relative mt-6">
+                <input
+                  required
+                  id="email"
+                  name="email"
+                  className="w-full mr-2 border rounded md:rounded-r-none p-2"
+                  onChange={(e) =>
+                    updateFormInput({ ...formInput, email: e.target.value })
+                  }
+                />
+                <label
+                  htmlFor="email"
+                  className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                >
+                  Email
+                </label>
+              </div>
+              <div className="relative mt-6 ">
+                <input
+                  type="tel"
+                  required
+                  name="phone"
+                  id="phone"
+                  className="w-full border rounded md:rounded-l-none p-2"
+                  onChange={(e) =>
+                    updateFormInput({ ...formInput, mobile: e.target.value })
+                  }
+                />
+                <label
+                  htmlFor="phone"
+                  className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                >
+                  Phone
+                </label>
+              </div>
             </div>
             <div className="flex flex-col md:flex-row">
-              <input
-                placeholder="Github URL"
-                className="w-full mt-2 mr-2 border rounded p-2"
-                onChange={(e) =>
-                  updateFormInput({ ...formInput, github: e.target.value })
-                }
-              />
-              <input
-                placeholder="LinkedIn URL"
-                className="w-full mt-2 border rounded p-2"
-                onChange={(e) =>
-                  updateFormInput({ ...formInput, linked: e.target.value })
-                }
-              />
+              <div className="relative mt-6 ">
+                <input
+                  name="github"
+                  id="github"
+                  placeholder="https://github.com/username"
+                  className="w-full mr-2 border rounded md:rounded-r-none p-2"
+                  onChange={(e) =>
+                    updateFormInput({ ...formInput, github: e.target.value })
+                  }
+                />
+                <label
+                  htmlFor="github"
+                  className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                >
+                  Github URL
+                </label>
+              </div>
+              <div className="relative mt-6 ">
+                <input
+                  name="linkedin"
+                  id="linkedin"
+                  placeholder="https://linkedin.com/in/username"
+                  className="w-full rounded md:rounded-l-none border p-2"
+                  onChange={(e) =>
+                    updateFormInput({ ...formInput, linked: e.target.value })
+                  }
+                />
+                <label
+                  htmlFor="linkedin"
+                  className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                >
+                  LinkedIn URL
+                </label>
+              </div>
             </div>
             <div className="flex mt-2  rounded p-4 text-gray-400">
               <span className="mr-3">Level</span>
