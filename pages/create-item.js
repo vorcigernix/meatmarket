@@ -274,17 +274,6 @@ export default function CreateItem() {
                   </svg>
                   {location}
                 </span>
-                <div className="pt-4 flex flex-col">
-                  {formInput.skills &&
-                    formInput.skills.split(",").map((s) => (
-                      <span
-                        className=" bg-white text-black rounded p-1 m-2"
-                        key={s}
-                      >
-                        {s}&nbsp;
-                      </span>
-                    ))}
-                </div>
               </div>
             )}
           </div>
@@ -302,7 +291,7 @@ export default function CreateItem() {
                 id="name"
                 name="name"
                 type="text"
-                className="peer p-4 h-10 w-full border-b-2 rounded border-gray-300 text-gray-900 placeholder-transparent focus:outline-none invalid:border-pink-600"
+                className="peer p-4 h-10 w-full border border-b-2 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
                 placeholder="Full Name"
                 onChange={(e) =>
                   updateFormInput({ ...formInput, name: e.target.value })
@@ -315,13 +304,13 @@ export default function CreateItem() {
                 Full Name
               </label>
             </div>
-            <div className="relative mt-6">
+            <div className="relative mt-8">
               <textarea
                 required
                 id="aboutme"
                 name="aboutme"
                 type="text"
-                className="peer p-4  w-full border-b-2 rounded border-gray-300 text-gray-900 placeholder-transparent focus:outline-none invalid:border-pink-600"
+                className="peer p-4 border w-full border-b-2 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
                 placeholder="About Me"
                 onChange={(e) =>
                   updateFormInput({ ...formInput, description: e.target.value })
@@ -335,13 +324,13 @@ export default function CreateItem() {
               </label>
             </div>
 
-            <div className="relative mt-6">
+            <div className="relative mt-8">
               <input
                 required
                 id="skills"
                 name="skills"
                 type="text"
-                className="peer p-4 h-10 w-full border-b-2 rounded border-gray-300 text-gray-900 placeholder-transparent focus:outline-none invalid:border-pink-600"
+                className="peer p-4 h-10 w-full border border-b-2 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
                 placeholder="Skills"
                 onChange={(e) =>
                   updateFormInput({ ...formInput, skills: e.target.value })
@@ -356,12 +345,14 @@ export default function CreateItem() {
             </div>
 
             <div className="flex flex-col md:flex-row">
-              <div className="relative mt-6">
+              <div className="relative mt-8">
                 <input
                   required
                   id="email"
                   name="email"
-                  className="w-full mr-2 border rounded md:rounded-r-none p-2"
+                  type="email"
+                  placeholder="Email"
+                  className="peer p-4 h-10 w-full border border-b-2 md:border-r-0 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-r-none"
                   onChange={(e) =>
                     updateFormInput({ ...formInput, email: e.target.value })
                   }
@@ -369,17 +360,18 @@ export default function CreateItem() {
                 <label
                   htmlFor="email"
                   className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
-                >
+                  >
                   Email
                 </label>
               </div>
-              <div className="relative mt-6 ">
+              <div className="relative mt-8 ">
                 <input
                   type="tel"
                   required
                   name="phone"
                   id="phone"
-                  className="w-full border rounded md:rounded-l-none p-2"
+                  placeholder="Phone Number"
+                  className="peer p-4 h-10 w-full border border-b-2 md:border-l-0 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-l-none"
                   onChange={(e) =>
                     updateFormInput({ ...formInput, mobile: e.target.value })
                   }
@@ -387,18 +379,18 @@ export default function CreateItem() {
                 <label
                   htmlFor="phone"
                   className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
-                >
+           >
                   Phone
                 </label>
               </div>
             </div>
             <div className="flex flex-col md:flex-row">
-              <div className="relative mt-6 ">
+              <div className="relative mt-8 ">
                 <input
                   name="github"
                   id="github"
                   placeholder="https://github.com/username"
-                  className="w-full mr-2 border rounded md:rounded-r-none p-2"
+                  className="peer p-4 h-10 w-full border border-b-2 md:border-r-0 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-r-none"
                   onChange={(e) =>
                     updateFormInput({ ...formInput, github: e.target.value })
                   }
@@ -410,12 +402,12 @@ export default function CreateItem() {
                   Github URL
                 </label>
               </div>
-              <div className="relative mt-6 ">
+              <div className="relative mt-8 ">
                 <input
                   name="linkedin"
                   id="linkedin"
                   placeholder="https://linkedin.com/in/username"
-                  className="w-full rounded md:rounded-l-none border p-2"
+                  className="peer p-4 h-10 w-full border border-b-2 md:border-l-0 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-l-none"
                   onChange={(e) =>
                     updateFormInput({ ...formInput, linked: e.target.value })
                   }
