@@ -10,7 +10,6 @@ import { nftmarketaddress, nftaddress } from "../config";
 
 import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
-
 import Loader from "../components/loader";
 
 export default function MyAssets() {
@@ -19,6 +18,7 @@ export default function MyAssets() {
   useEffect(() => {
     loadNFTs();
   }, []);
+
   async function loadNFTs() {
     await addPolygonNetwork();
     const web3Modal = new Web3Modal({
