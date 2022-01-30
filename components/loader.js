@@ -1,9 +1,9 @@
 export default function Loader(props) {
   return (
     <div
-      className={`p-1 md:w-1/4 lg:w-1/5 ${props.loadingState == "loaded" && "hidden"} `}
+      className={`p-1 w-full md:w-1/4 lg:w-1/5 ${props.loadingState == "loaded" && "hidden"} `}
     >
-      <div className="h-full bg-white rounded-lg overflow-hidden shadow-lg shadow-pink-500/50">
+      <div className="h-full dark:bg-zinc-900 rounded-lg overflow-hidden shadow-lg shadow-pink-500/50">
         <img
           className="lg:h-72 md:h-72 w-full object-cover object-center"
           src="/images/loader.webp"
