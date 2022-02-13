@@ -1,14 +1,12 @@
 import Link from "next/link";
-import { ethers } from "ethers";
 import { useState, useEffect } from "react";
 const Nav = () => {
   const [provider, setProvider] = useState(null);
   useEffect(() => {
     if (window.ethereum) {
-      setProvider(new ethers.providers.Web3Provider(window.ethereum));
+      setProvider(true);
     }
-    console.log(provider);
-  }, [provider]);
+  }, []);
   return (
     <header className="text-zinc-600 dark:text-zinc-400 md:mb-4">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
