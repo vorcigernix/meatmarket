@@ -106,7 +106,7 @@ export default function Page() {
                   So how does this work? We elevate the conversation between the
                   companies and a senior specialists. Specialized knowledge
                   workers usually have a very good jobs and they typically not
-                  respond to the offers. On Younf the specialists create an NFT
+                  respond to the offers. On You.nf the specialists create an NFT
                   &quot;business card&quot; and any company can buy it in order
                   to get a direct contact information. For specialists, there is
                   a fee covering the time they spent discussing the job offer.
@@ -153,7 +153,7 @@ export default function Page() {
                   So how does this work? We elevate the conversation between the
                   companies and a senior specialists. Specialized knowledge
                   workers usually have a very good jobs and they typically not
-                  respond to the offers. On Younf the specialists create an NFT
+                  respond to the offers. On You.nf the specialists create an NFT
                   &quot;business card&quot; and any company can buy it in order
                   to get a direct contact information. For specialists, there is
                   a fee covering the time they spent discussing the job offer.

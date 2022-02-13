@@ -12,10 +12,10 @@ const Nav = () => {
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/" passHref>
           <a className="flex font-title font-medium items-center  mb-4 md:mb-0">
-            <img src="favicon.svg" alt="Younf" className="w-28 h-28" />
+            <img src="favicon.svg" alt="You.nf" className="w-28 h-28" />
             <div className="flex flex-col ml-4">
               <span className="text-4xl font-display dark:text-white ">
-                Younf
+                You.nf
               </span>
               <hr className="border-2 border-zinc-200 dark:border-white w-16 m-1" />
               <span className=" font-body">You are non-fungible</span>

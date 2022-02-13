@@ -199,7 +199,7 @@ export default function CreateItem() {
           </h2>
           <div className="md:w-3/5 md:pl-6">
             <p className="leading-relaxed text-base dark:text-gray-300">
-              Younf profile is like free business card in NFT token. You put the
+              You.nf profile is like free business card in NFT token. You put the
               card to the marketplace and whoever buys the card get a direct
               contact information. You get 95% of the price you set on the card
               by setting your level.

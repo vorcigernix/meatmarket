@@ -6,9 +6,9 @@ const Footer = () => {
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
 		<div className="flex flex-col md:flex-row font-title font-medium items-center mb-4 md:mb-0">
-            <img src="favicon.svg" alt="Younf" className="w-28 h-28" />
+            <img src="favicon.svg" alt="You.nf" className="w-28 h-28" />
             <div className="hidden md:flex md:flex-col md:ml-4">
-              <span className="text-xl font-display dark:text-white ">Younf</span>
+              <span className="text-xl font-display dark:text-white ">You.nf</span>
               <hr className="border-1 border-zinc-200 dark:border-white w-16 m-1"/>
               <span className="font-body text-sm">You are non-fungible</span>
             </div>
@@ -136,7 +136,7 @@ const Footer = () => {
       <div className="bg-zinc-100">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-zinc-500 text-sm text-center sm:text-left">
-            © 2022 Younf - All rights reserved.
+            © 2022 You.nf - All rights reserved.
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
             <a

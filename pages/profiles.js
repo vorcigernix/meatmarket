@@ -136,11 +136,11 @@ export default function Profiles() {
       <section className="text-zinc-600 ">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           <h2 className="sm:text-3xl pl-5 text-2xl text-zinc-900 dark:text-zinc-400 font-medium font-title mb-2 md:w-2/5">
-            Younf Profiles
+            You.nf Profiles
           </h2>
           <div className="md:w-3/5 md:pl-6">
             <p className="leading-relaxed text-base dark:text-zinc-400">
-              These are Younf profiles you can buy. By buying them, you get a
+              These are You.nf profiles you can buy. By buying them, you get a
               direct contact information.
             </p>
 

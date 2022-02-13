@@ -165,7 +165,7 @@ export default function CreatorDashboard() {
           <div className="md:w-3/5 md:pl-6">
             <p className="leading-relaxed text-base">
               This is a collection of NFTs you have created. They can be bought
-              here on Younf or you can list them on the marketplace like{" "}
+              here on You.nf or you can list them on the marketplace like{" "}
               <a href="https://opensea.io/" target="_blank" rel="noreferrer">
                 OpenSea
               </a>

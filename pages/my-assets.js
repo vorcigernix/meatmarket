@@ -75,7 +75,7 @@ export default function MyAssets() {
             </h1>
             <p className="mb-2 leading-relaxed ">
               <b className=" text-pink-400">How to get started.</b> From a
-              technology standpoint, you can be ready to get started with Younf
+              technology standpoint, you can be ready to get started with You.nf
               in a few minutes. You need to{" "}
               <a
                 className=" dark:text-white font-bold"
@@ -115,7 +115,7 @@ export default function MyAssets() {
             </div>
             <p className="my-8 leading-relaxed">
               You need to cover a regulation, accounting and tax obligations and
-              security concerns to be able to use Younf as a legal entity. You
+              security concerns to be able to use You.nf as a legal entity. You
               are welcome to try our product as an individual though and we will
               do our best to help your teams to onboard.
             </p>
