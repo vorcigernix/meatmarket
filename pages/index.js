@@ -138,14 +138,14 @@ export default function Page() {
                     />
                   </svg>
                   You have a wallet, but it is not set on Polygon network. Click
-                  on botton above or
+                  on botton above or &nbsp;
                   <a
                     href="https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/"
                     target="_blank"
                     rel="noreferrer"
                     className="underline"
                   >
-                    &nbsp;configure network manually
+                    configure network manually
                   </a>
                   .
                 </p>
