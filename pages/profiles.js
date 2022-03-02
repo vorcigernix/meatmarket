@@ -8,10 +8,10 @@ import { nftaddress, nftmarketaddress } from "../config";
 
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
-import Loader  from "../components/loader";
+import Loader from "../components/loader";
 
-let rpcEndpoint =
-  "https://polygon-mumbai.g.alchemy.com/v2/elWZjOPfS0H03lYqe4-fSCu7LM4i7HUD";
+let rpcEndpoint = "https://polygon-rpc.com/";
+//"https://polygon-mumbai.g.alchemy.com/v2/elWZjOPfS0H03lYqe4-fSCu7LM4i7HUD";
 
 export default function Profiles() {
   const [nfts, setNfts] = useState([]);
@@ -23,7 +23,6 @@ export default function Profiles() {
     const provider = new ethers.providers.JsonRpcProvider(rpcEndpoint);
     //const provider = new ethers.providers.InfuraProvider("maticmum", {projectId: "f0671e059fde4ab1a541db0a8ea9aa1d",projectSecret: "056ae48abd6d4f0682f5df28258d3ea2",});
     //const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.infura.io/v3/f0671e059fde4ab1a541db0a8ea9aa1d");
-    //const provider = new ethers.providers.InfuraProvider("maticmum", { projectId: "f0671e059fde4ab1a541db0a8ea9aa1d",});
     //const provider = new ethers.providers.InfuraProvider("ropsten","f0671e059fde4ab1a541db0a8ea9aa1d");
 
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
