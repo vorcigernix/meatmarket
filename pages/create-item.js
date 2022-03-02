@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Web3Modal from "web3modal";
 import { useDropzone } from "react-dropzone";
 import Link from "next/link";
-import addPolygonNetwork from "/components/injectPolygon";
+import addPolygonNetwork from "/components/injectPolygonMain";
 
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 

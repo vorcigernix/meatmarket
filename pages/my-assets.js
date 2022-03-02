@@ -4,7 +4,7 @@ import axios from "axios";
 import Web3Modal from "web3modal";
 import Link from "next/link";
 
-import addPolygonNetwork from "/components/injectPolygon";
+import addPolygonNetwork from "/components/injectPolygonMain";
 
 import { nftmarketaddress, nftaddress } from "../config";
 

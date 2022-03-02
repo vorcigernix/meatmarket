@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import detectEthereumProvider from "@metamask/detect-provider";
-import addPolygonNetwork from "/components/injectPolygon";
+import addPolygonNetwork from "/components/injectPolygonMain";
 
 export default function Page() {
   const [provider, setProvider] = useState(null);

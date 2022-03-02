@@ -1,4 +1,4 @@
-import addPolygonNetwork from "./injectPolygon";
+import addPolygonNetwork from "./injectPolygonMain";
 
 const Footer = () => {
   return (
