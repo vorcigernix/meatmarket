@@ -78,7 +78,7 @@ export default function Page() {
                   based on the use of NFT tokens as a contact information.
                 </p>
               </>
-            ) : provider === "0x13881" ? (
+            ) : provider === "0x89" ? (
               <>
                 <Link href="/create-item" passHref>
                   <button className="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded font-sans ">
