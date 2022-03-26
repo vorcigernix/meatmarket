@@ -74,23 +74,23 @@ export default function Profiles() {
   }
   if (loadingState === "loaded" && !nfts.length)
     return (
-      <section className="text-zinc-600 ">
-        <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <h2 className="sm:text-3xl text-2xl text-zinc-900 font-medium font-title mb-2 md:w-2/5">
-            This page is empty and that&apos;s great.
-            <picture>
-              <source srcSet="/images/4.avif" type="image/avif" />
-              <img
-                className="object-cover object-center rounded"
-                decoding="async"
-                loading="lazy"
-                src="/images/4.jpg"
-                alt="hero image"
-              />
-            </picture>
-          </h2>
+      <section className="text-zinc-600 dark:text-gray-300">
+        <div className="container px-5 py-24 mx-auto flex gap-4 justify-center items-center">
+          <picture>
+            <source srcSet="/images/4.avif" type="image/avif" />
+            <img
+              className="object-cover object-center rounded"
+              decoding="async"
+              loading="lazy"
+              src="/images/4.jpg"
+              alt="hero image"
+            />
+          </picture>
 
           <div className="md:w-3/5 md:pl-6">
+            <h2 className="sm:text-3xl text-2xl text-zinc-900 dark:text-gray-300 font-medium font-title md:w-2/5">
+              This page is empty and that&apos;s great.
+            </h2>
             <p className="leading-relaxed text-base pb-8">
               It is empty because all profile cards created in the system are
               bought already. If you represent a company or agency, it is a
@@ -132,7 +132,7 @@ export default function Profiles() {
     );
   return (
     <>
-      <section className="text-zinc-600 ">
+      <section className="text-zinc-600  ">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           <h2 className="sm:text-3xl pl-5 text-2xl text-zinc-900 dark:text-zinc-400 font-medium font-title mb-2 md:w-2/5">
             You.nf Profiles

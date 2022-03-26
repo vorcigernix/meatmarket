@@ -23,7 +23,7 @@ export default function Page() {
   }, []);
   return (
     <>
-      <section className="text-gray-600 dark:text-gray-300 ">
+      <section className="text-zinc-600 dark:text-gray-300 ">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium dark:text-white">
@@ -177,7 +177,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="text-gray-600 dark:text-gray-300 ">
+      <section className="text-zinc-600 dark:text-gray-300 ">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10 shadow-lg shadow-pink-500/50">
             <picture>
@@ -220,7 +220,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="text-gray-600 dark:text-gray-300 ">
+      <section className="text-zinc-600 dark:text-gray-300 ">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium dark:text-white">

@@ -139,7 +139,7 @@ export default function CreateItem() {
 
   if (loadingState) {
     return (
-      <section className="text-gray-600 ">
+      <section className="text-zinc-600 ">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-200">
@@ -192,7 +192,7 @@ export default function CreateItem() {
 
   return (
     <>
-      <section className="text-gray-600 ">
+      <section className="text-zinc-600 ">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           <h2 className="sm:text-3xl text-2xl text-gray-900 dark:text-gray-200 font-medium font-title mb-2 md:w-2/5">
             Create Profile
@@ -226,7 +226,7 @@ export default function CreateItem() {
         </div>
       </section>
 
-      <section className="text-gray-600 body-font overflow-hidden">
+      <section className="text-zinc-600 body-font overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             {fileUrl ? (
@@ -309,7 +309,7 @@ export default function CreateItem() {
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                  className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
                 >
                   Full Name
                 </label>
@@ -331,7 +331,7 @@ export default function CreateItem() {
                 />
                 <label
                   htmlFor="aboutme"
-                  className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                  className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
                 >
                   About Me
                 </label>
@@ -351,7 +351,7 @@ export default function CreateItem() {
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                  className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
                 >
                   Skills (separated by commas)
                 </label>
@@ -372,7 +372,7 @@ export default function CreateItem() {
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                    className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
                   >
                     Email
                   </label>
@@ -391,7 +391,7 @@ export default function CreateItem() {
                   />
                   <label
                     htmlFor="phone"
-                    className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                    className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
                   >
                     Phone
                   </label>
@@ -410,7 +410,7 @@ export default function CreateItem() {
                   />
                   <label
                     htmlFor="github"
-                    className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                    className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
                   >
                     Github URL
                   </label>
@@ -427,7 +427,7 @@ export default function CreateItem() {
                   />
                   <label
                     htmlFor="linkedin"
-                    className="absolute left-2 -top-5 text-gray-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                    className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
                   >
                     LinkedIn URL
                   </label>

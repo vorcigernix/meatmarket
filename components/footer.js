@@ -2,7 +2,7 @@ import addPolygonNetwork from "./injectPolygonMain";
 
 const Footer = () => {
   return (
-    <footer className="text-zinc-600">
+    <footer className="text-zinc-600 ">
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
 		<div className="flex flex-col md:flex-row font-title font-medium items-center mb-4 md:mb-0">
@@ -23,7 +23,7 @@ const Footer = () => {
               <li  className="pb-2">
                 <a
                   href="https://metamask.io/download.html"
-                  className="text-zinc-600 hover:text-zinc-800"
+                  className="text-zinc-600  hover:text-zinc-800"
                 >
                   Install MetaMask
                 </a>
@@ -31,7 +31,7 @@ const Footer = () => {
               <li  className="pb-2">
                 <button
                   onClick={() => addPolygonNetwork()}
-                  className="text-zinc-600 hover:text-zinc-800 text-left"
+                  className="text-zinc-600  hover:text-zinc-800 text-left"
                 >
                   Add Polygon network to MetaMask
                 </button>
@@ -44,14 +44,14 @@ const Footer = () => {
             </h2>
             <nav className="list-none mb-10">
               <li  className="pb-2">
-                <a href="tos.pdf" className="text-zinc-600 hover:text-zinc-800">
+                <a href="tos.pdf" className="text-zinc-600  hover:text-zinc-800">
                   Terms of Use
                 </a>
               </li>
               <li  className="pb-2">
                 <a
                   href="privacy.pdf"
-                  className="text-zinc-600 hover:text-zinc-800"
+                  className="text-zinc-600  hover:text-zinc-800"
                 >
                   Cookies
                 </a>
@@ -59,7 +59,7 @@ const Footer = () => {
               <li  className="pb-2">
                 <a
                   href="privacy.pdf"
-                  className="text-zinc-600 hover:text-zinc-800"
+                  className="text-zinc-600  hover:text-zinc-800"
                 >
                   Privacy policy
                 </a>
@@ -75,7 +75,7 @@ const Footer = () => {
               <li  className="pb-2">
                 <a
                   href="https://ethereum.org/en/"
-                  className="text-zinc-600 hover:text-zinc-800"
+                  className="text-zinc-600  hover:text-zinc-800"
                 >
                   Ethereum
                 </a>
@@ -83,7 +83,7 @@ const Footer = () => {
               <li  className="pb-2">
                 <a
                   href="https://polygon.technology/"
-                  className="text-zinc-600 hover:text-zinc-800"
+                  className="text-zinc-600  hover:text-zinc-800"
                 >
                   Polygon
                 </a>
@@ -91,7 +91,7 @@ const Footer = () => {
               <li  className="pb-2">
                 <a
                   href="https://vercel.com/"
-                  className="text-zinc-600 hover:text-zinc-800"
+                  className="text-zinc-600  hover:text-zinc-800"
                 >
                   Vercel
                 </a>
@@ -107,7 +107,7 @@ const Footer = () => {
               <li  className="pb-2">
                 <a
                   href="https://twitter.com/vorcigernix"
-                  className="text-zinc-600 hover:text-zinc-800"
+                  className="text-zinc-600  hover:text-zinc-800"
                 >
                   Twitter
                 </a>
@@ -115,7 +115,7 @@ const Footer = () => {
               <li  className="pb-2">
                 <a
                   href="https://www.linkedin.com/in/adamsobotka"
-                  className="text-zinc-600 hover:text-zinc-800"
+                  className="text-zinc-600  hover:text-zinc-800"
                 >
                   LinkedIn
                 </a>
@@ -123,7 +123,7 @@ const Footer = () => {
               <li  className="pb-2">
                 <a
                   href="mailto:marketing@younf.com"
-                  className="text-zinc-600 hover:text-zinc-800"
+                  className="text-zinc-600  hover:text-zinc-800"
                 >
                   E-mail
                 </a>

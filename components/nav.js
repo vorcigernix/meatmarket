@@ -8,7 +8,7 @@ const Nav = () => {
     }
   }, []);
   return (
-    <header className="text-zinc-600 dark:text-zinc-400 md:mb-4">
+    <header className="text-zinc-600  dark:text-zinc-400 md:mb-4">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/" passHref>
           <a className="flex font-title font-medium items-center  mb-4 md:mb-0">
