@@ -9,10 +9,9 @@ import addPolygonNetwork from "/components/injectPolygonMain";
 
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
-import { nftaddress, nftmarketaddress } from "../config";
+import { marketplaceAddress } from "../config";
 
-import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
-import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
+import NFTMarketplace from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
 
 export default function CreateItem() {
   const [fileUrl, setFileUrl] = useState(null);
@@ -137,6 +136,57 @@ export default function CreateItem() {
     router.push("/");
   }
 
+  async function uploadToIPFS() {
+    const { name, description, price, skills, github, email, mobile, linked } =
+      formInput;
+    if (!name || !description || !price || !fileUrl) return;
+    /* first, upload to IPFS */
+    const data = JSON.stringify({
+      name,
+      description,
+      image: fileUrl,
+      skills,
+      github,
+      email,
+      mobile,
+      linked,
+      location,
+    });
+    try {
+      const added = await client.add(data);
+      const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+      /* after file is uploaded to IPFS, return the URL to use it in the transaction */
+      return url;
+    } catch (error) {
+      console.log("Error uploading file: ", error);
+    }
+  }
+
+  async function listNFTForSale() {
+    setLoadingState(true);
+    const url = await uploadToIPFS();
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+    const provider = new ethers.providers.Web3Provider(connection);
+    const signer = provider.getSigner();
+
+    /* next, create the item */
+    const price = ethers.utils.parseUnits(formInput.price, "ether");
+    let contract = new ethers.Contract(
+      marketplaceAddress,
+      NFTMarketplace.abi,
+      signer
+    );
+    let listingPrice = await contract.getListingPrice();
+    listingPrice = listingPrice.toString();
+    let transaction = await contract.createToken(url, price, {
+      value: listingPrice,
+    });
+    await transaction.wait();
+
+    router.push("/");
+  }
+
   if (loadingState) {
     return (
       <section className="text-zinc-600 ">
@@ -199,8 +249,8 @@ export default function CreateItem() {
           </h2>
           <div className="md:w-3/5 md:pl-6">
             <p className="leading-relaxed text-base dark:text-zinc-300">
-              You.nf profile is like free business card in NFT token. You put the
-              card to the marketplace and whoever buys the card get a direct
+              You.nf profile is like free business card in NFT token. You put
+              the card to the marketplace and whoever buys the card get a direct
               contact information. You get 95% of the price you set on the card
               by setting your level.
             </p>
@@ -459,48 +509,32 @@ export default function CreateItem() {
                 </div>
               </div>
               <div className="flex">
-                {formInput.price &&
-                formInput.name &&
-                formInput.description &&
-                formInput.email &&
-                formInput.mobile &&
-                fileUrl ? (
-                  <button
-                    onClick={createMarket}
-                    className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-lg mt-4 md:mt-2"
+                <button
+                  onClick={listNFTForSale}
+                  disabled={
+                    loadingState ||
+                    !fileUrl ||
+                    !formInput.price ||
+                    !formInput.name ||
+                    !formInput.description ||
+                    !formInput.email ||
+                    !formInput.mobile
+                  }
+                  className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-lg mt-4 md:mt-2 disabled:opacity-20 disabled:cursor-not-allowed"
+                >
+                  Create Profile
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-4 h-4 ml-1"
+                    viewBox="0 0 24 24"
                   >
-                    Create Profile
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-4 h-4 ml-1"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
-                ) : (
-                  <button
-                    onClick={createMarket}
-                    className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-lg mt-4 md:mt-2 opacity-20 cursor-not-allowed"
-                  >
-                    Create Profile
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-4 h-4 ml-1"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
-                )}
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
