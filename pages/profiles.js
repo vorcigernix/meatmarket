@@ -4,7 +4,9 @@ import axios from "axios";
 import Web3Modal from "web3modal";
 import Link from "next/link";
 
-import { nftaddress, nftmarketaddress } from "../config";
+import { nftaddress, nftmarketaddress, marketplaceAddress } from "../config";
+
+import NFTMarketplace from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
 
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
@@ -21,9 +23,7 @@ export default function Profiles() {
   }, []);
   async function loadNFTs() {
     const provider = new ethers.providers.JsonRpcProvider(rpcEndpoint);
-    //const provider = new ethers.providers.InfuraProvider("maticmum", {projectId: "f0671e059fde4ab1a541db0a8ea9aa1d",projectSecret: "056ae48abd6d4f0682f5df28258d3ea2",});
-    //const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.infura.io/v3/f0671e059fde4ab1a541db0a8ea9aa1d");
-    //const provider = new ethers.providers.InfuraProvider("ropsten","f0671e059fde4ab1a541db0a8ea9aa1d");
+
 
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
     const marketContract = new ethers.Contract(

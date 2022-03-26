@@ -1,33 +1,37 @@
 require("@nomiclabs/hardhat-waffle");
-const fs = require("fs");
-const privateKey = process.env.privateKey || fs.readFileSync(".secret").toString().trim();
-// const infuraId = fs.readFileSync(".infuraid").toString().trim() || "";
+const fs = require('fs');
+const infuraId = fs.readFileSync(".infuraid").toString().trim() || "";
+const secret = fs.readFileSync(".secret").toString().trim() || "process.env.privateKey";
 
 module.exports = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
-      chainId: 1337,
+      chainId: 1337
     },
-
+    
     mumbai: {
       // Infura
-      // url: `https://polygon-mumbai.infura.io/v3/${infuraId}`
-      url: "https://rpc-mumbai.matic.today",
-      accounts: [privateKey],
+      url: `https://polygon-mumbai.infura.io/v3/${infuraId}`,
+      //url: "https://rpc-mumbai.matic.today",
+      accounts: [secret]
     },
-    polygon: {
-      url: "https://polygon-rpc.com/",
-      accounts: [privateKey],
-    },
+    matic: {
+      // Infura
+      url: `https://polygon-mainnet.infura.io/v3/${infuraId}`,
+      //url: "https://rpc-mainnet.maticvigil.com",
+      accounts: [secret]
+    }
+    
   },
   solidity: {
     version: "0.8.4",
     settings: {
       optimizer: {
         enabled: true,
-        runs: 200,
-      },
-    },
-  },
+        runs: 200
+      }
+    }
+  }
 };
+
