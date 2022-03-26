@@ -142,12 +142,12 @@ export default function CreateItem() {
       <section className="text-zinc-600 ">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-200">
+            <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium text-zinc-900 dark:text-zinc-200">
               Before you wink
               <br className="inline-block" />
               your card will be ready
             </h1>
-            <p className="mb-8 leading-relaxed dark:text-gray-300">
+            <p className="mb-8 leading-relaxed dark:text-zinc-300">
               Now we ask for a confirmations from you. First is a
               &apos;sign&apos; that works the same way as a signature on a
               paper. Second is actual creation of a card on blockchain. After
@@ -194,11 +194,11 @@ export default function CreateItem() {
     <>
       <section className="text-zinc-600 ">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <h2 className="sm:text-3xl text-2xl text-gray-900 dark:text-gray-200 font-medium font-title mb-2 md:w-2/5">
+          <h2 className="sm:text-3xl text-2xl text-zinc-900 dark:text-zinc-200 font-medium font-title mb-2 md:w-2/5">
             Create Profile
           </h2>
           <div className="md:w-3/5 md:pl-6">
-            <p className="leading-relaxed text-base dark:text-gray-300">
+            <p className="leading-relaxed text-base dark:text-zinc-300">
               You.nf profile is like free business card in NFT token. You put the
               card to the marketplace and whoever buys the card get a direct
               contact information. You get 95% of the price you set on the card
@@ -301,7 +301,7 @@ export default function CreateItem() {
                   id="name"
                   name="name"
                   type="text"
-                  className="peer p-4 h-10 w-full border border-b-2 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
+                  className="peer p-4 h-10 w-full border border-b-2 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
                   placeholder="Full Name"
                   onChange={(e) =>
                     updateFormInput({ ...formInput, name: e.target.value })
@@ -309,7 +309,7 @@ export default function CreateItem() {
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                  className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                 >
                   Full Name
                 </label>
@@ -320,7 +320,7 @@ export default function CreateItem() {
                   id="aboutme"
                   name="aboutme"
                   type="text"
-                  className="peer p-4 border w-full border-b-2 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
+                  className="peer p-4 border w-full border-b-2 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
                   placeholder="About Me"
                   onChange={(e) =>
                     updateFormInput({
@@ -331,7 +331,7 @@ export default function CreateItem() {
                 />
                 <label
                   htmlFor="aboutme"
-                  className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                  className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                 >
                   About Me
                 </label>
@@ -343,7 +343,7 @@ export default function CreateItem() {
                   id="skills"
                   name="skills"
                   type="text"
-                  className="peer p-4 h-10 w-full border border-b-2 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
+                  className="peer p-4 h-10 w-full border border-b-2 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
                   placeholder="Skills"
                   onChange={(e) =>
                     updateFormInput({ ...formInput, skills: e.target.value })
@@ -351,7 +351,7 @@ export default function CreateItem() {
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                  className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                 >
                   Skills (separated by commas)
                 </label>
@@ -365,14 +365,14 @@ export default function CreateItem() {
                     name="email"
                     type="email"
                     placeholder="Email"
-                    className="peer p-4 h-10 w-full border border-b-2 md:border-r-0 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-r-none"
+                    className="peer p-4 h-10 w-full border border-b-2 md:border-r-0 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-r-none"
                     onChange={(e) =>
                       updateFormInput({ ...formInput, email: e.target.value })
                     }
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                    className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                   >
                     Email
                   </label>
@@ -384,14 +384,14 @@ export default function CreateItem() {
                     name="phone"
                     id="phone"
                     placeholder="Phone Number"
-                    className="peer p-4 h-10 w-full border border-b-2 md:border-l-0 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-l-none"
+                    className="peer p-4 h-10 w-full border border-b-2 md:border-l-0 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-l-none"
                     onChange={(e) =>
                       updateFormInput({ ...formInput, mobile: e.target.value })
                     }
                   />
                   <label
                     htmlFor="phone"
-                    className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                    className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                   >
                     Phone
                   </label>
@@ -403,14 +403,14 @@ export default function CreateItem() {
                     name="github"
                     id="github"
                     placeholder="https://github.com/username"
-                    className="peer p-4 h-10 w-full border border-b-2 md:border-r-0 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-r-none"
+                    className="peer p-4 h-10 w-full border border-b-2 md:border-r-0 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-r-none"
                     onChange={(e) =>
                       updateFormInput({ ...formInput, github: e.target.value })
                     }
                   />
                   <label
                     htmlFor="github"
-                    className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                    className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                   >
                     Github URL
                   </label>
@@ -420,14 +420,14 @@ export default function CreateItem() {
                     name="linkedin"
                     id="linkedin"
                     placeholder="https://linkedin.com/in/username"
-                    className="peer p-4 h-10 w-full border border-b-2 md:border-l-0 rounded border-gray-200 text-gray-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-l-none"
+                    className="peer p-4 h-10 w-full border border-b-2 md:border-l-0 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-l-none"
                     onChange={(e) =>
                       updateFormInput({ ...formInput, linked: e.target.value })
                     }
                   />
                   <label
                     htmlFor="linkedin"
-                    className="absolute left-2 -top-5 text-zinc-600 dark:text-gray-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-gray-200 peer-focus:text-sm"
+                    className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                   >
                     LinkedIn URL
                   </label>

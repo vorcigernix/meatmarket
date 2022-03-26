@@ -5,11 +5,13 @@ const Footer = () => {
     <footer className="text-zinc-600 ">
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
-		<div className="flex flex-col md:flex-row font-title font-medium items-center mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row font-title font-medium items-center mb-4 md:mb-0">
             <img src="favicon.svg" alt="You.nf" className="w-28 h-28" />
             <div className="hidden md:flex md:flex-col md:ml-4">
-              <span className="text-xl font-display dark:text-white ">You.nf</span>
-              <hr className="border-1 border-zinc-200 dark:border-white w-16 m-1"/>
+              <span className="text-xl font-display dark:text-white ">
+                You.nf
+              </span>
+              <hr className="border-1 border-zinc-200 dark:border-white w-16 m-1" />
               <span className="font-body text-sm">You are non-fungible</span>
             </div>
           </div>
@@ -19,19 +21,14 @@ const Footer = () => {
             <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-4">
               Setup
             </h2>
-            <nav className="list-none mb-10">
-              <li  className="pb-2">
-                <a
-                  href="https://metamask.io/download.html"
-                  className="text-zinc-600  hover:text-zinc-800"
-                >
-                  Install MetaMask
-                </a>
+            <nav className="list-none mb-10 text-zinc-600  hover:text-zinc-800 dark:text-zinc-300 dark:hover:text-white">
+              <li className="pb-2">
+                <a href="https://metamask.io/download.html">Install MetaMask</a>
               </li>
-              <li  className="pb-2">
+              <li className="pb-2">
                 <button
                   onClick={() => addPolygonNetwork()}
-                  className="text-zinc-600  hover:text-zinc-800 text-left"
+                  className="text-left"
                 >
                   Add Polygon network to MetaMask
                 </button>
@@ -42,93 +39,51 @@ const Footer = () => {
             <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-4">
               Our Policies
             </h2>
-            <nav className="list-none mb-10">
-              <li  className="pb-2">
-                <a href="tos.pdf" className="text-zinc-600  hover:text-zinc-800">
-                  Terms of Use
-                </a>
+            <nav className="list-none mb-10 text-zinc-600  hover:text-zinc-800 dark:text-zinc-300 dark:hover:text-white">
+              <li className="pb-2">
+                <a href="tos.pdf">Terms of Use</a>
               </li>
-              <li  className="pb-2">
-                <a
-                  href="privacy.pdf"
-                  className="text-zinc-600  hover:text-zinc-800"
-                >
-                  Cookies
-                </a>
+              <li className="pb-2">
+                <a href="privacy.pdf">Cookies</a>
               </li>
-              <li  className="pb-2">
-                <a
-                  href="privacy.pdf"
-                  className="text-zinc-600  hover:text-zinc-800"
-                >
-                  Privacy policy
-                </a>
+              <li className="pb-2">
+                <a href="privacy.pdf">Privacy policy</a>
               </li>
-              <li  className="pb-2"></li>
+              <li className="pb-2"></li>
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-4">
               Technology
             </h2>
-            <nav className="list-none mb-10">
-              <li  className="pb-2">
-                <a
-                  href="https://ethereum.org/en/"
-                  className="text-zinc-600  hover:text-zinc-800"
-                >
-                  Ethereum
-                </a>
+            <nav className="list-none mb-10 text-zinc-600  hover:text-zinc-800 dark:text-zinc-300 dark:hover:text-white">
+              <li className="pb-2">
+                <a href="https://ethereum.org/en/">Ethereum</a>
               </li>
-              <li  className="pb-2">
-                <a
-                  href="https://polygon.technology/"
-                  className="text-zinc-600  hover:text-zinc-800"
-                >
-                  Polygon
-                </a>
+              <li className="pb-2">
+                <a href="https://polygon.technology/">Polygon</a>
               </li>
-              <li  className="pb-2">
-                <a
-                  href="https://vercel.com/"
-                  className="text-zinc-600  hover:text-zinc-800"
-                >
-                  Vercel
-                </a>
+              <li className="pb-2">
+                <a href="https://vercel.com/">Vercel</a>
               </li>
-              <li  className="pb-2"></li>
+              <li className="pb-2"></li>
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-4">
               Contacts
             </h2>
-            <nav className="list-none mb-10">
-              <li  className="pb-2">
-                <a
-                  href="https://twitter.com/vorcigernix"
-                  className="text-zinc-600  hover:text-zinc-800"
-                >
-                  Twitter
-                </a>
+            <nav className="list-none mb-10 text-zinc-600  hover:text-zinc-800 dark:text-zinc-300 dark:hover:text-white">
+              <li className="pb-2">
+                <a href="https://twitter.com/vorcigernix">Twitter</a>
               </li>
-              <li  className="pb-2">
-                <a
-                  href="https://www.linkedin.com/in/adamsobotka"
-                  className="text-zinc-600  hover:text-zinc-800"
-                >
-                  LinkedIn
-                </a>
+              <li className="pb-2">
+                <a href="https://www.linkedin.com/in/adamsobotka">LinkedIn</a>
               </li>
-              <li  className="pb-2">
-                <a
-                  href="mailto:marketing@younf.com"
-                  className="text-zinc-600  hover:text-zinc-800"
-                >
-                  E-mail
-                </a>
+              <li className="pb-2">
+                <a href="mailto:marketing@younf.com">E-mail</a>
               </li>
-              <li  className="pb-2"></li>
+              <li className="pb-2"></li>
             </nav>
           </div>
         </div>

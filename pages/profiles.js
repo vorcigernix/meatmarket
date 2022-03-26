@@ -74,61 +74,65 @@ export default function Profiles() {
   }
   if (loadingState === "loaded" && !nfts.length)
     return (
-      <section className="text-zinc-600 dark:text-gray-300">
-        <div className="container px-5 py-24 mx-auto flex gap-4 justify-center items-center">
-          <picture>
-            <source srcSet="/images/4.avif" type="image/avif" />
-            <img
-              className="object-cover object-center rounded"
-              decoding="async"
-              loading="lazy"
-              src="/images/4.jpg"
-              alt="hero image"
-            />
-          </picture>
-
-          <div className="md:w-3/5 md:pl-6">
-            <h2 className="sm:text-3xl text-2xl text-zinc-900 dark:text-gray-300 font-medium font-title md:w-2/5">
-              This page is empty and that&apos;s great.
-            </h2>
-            <p className="leading-relaxed text-base pb-8">
-              It is empty because all profile cards created in the system are
-              bought already. If you represent a company or agency, it is a
-              great opportunity to finish the first steps decribed{" "}
-              <Link href="/about" passHref>
-                <a className="underline">here</a>
-              </Link>
-              .
-            </p>
-            <p className="leading-relaxed text-base">
-              If you are a profesional, looking for a place to create your
-              profile card NFT, even better. Go create your profile quickly{" "}
-              <Link href="/create-item" passHref>
-                <a className="underline">here</a>
-              </Link>{" "}
-              and be among first cards listed on this page.
-            </p>
-            <div className="flex md:mt-4 mt-6">
-              <Link href="/about" passHref>
-                <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
-                  Help, what is this about?
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </Link>
+      <>
+        <section className="text-zinc-600 body-font">
+          <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+              <picture>
+                <source srcSet="/images/4.avif" type="image/avif" />
+                <img
+                  className="object-cover object-center rounded"
+                  decoding="async"
+                  loading="lazy"
+                  src="/images/4.jpg"
+                  alt="hero image"
+                />
+              </picture>
+            </div>
+            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+              <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-zinc-900 dark:text-white">
+                This page is empty <br className="hidden lg:inline-block" />
+                and that&apos;s great.
+              </h1>
+              <p className="mb-8 leading-relaxed dark:text-zinc-300">
+                It is empty because all profile cards created in the system are
+                bought already. If you represent a company or agency, it is a
+                great opportunity to finish the first steps decribed{" "}
+                <Link href="/about" passHref>
+                  <a className="underline">here</a>
+                </Link>
+                .
+              </p>
+              <p className="mb-8 leading-relaxed dark:text-zinc-300">
+                If you are a profesional, looking for a place to create your
+                profile card NFT, even better. Go create your profile quickly{" "}
+                <Link href="/create-item" passHref>
+                  <a className="underline">here</a>
+                </Link>{" "}
+                and be among first cards listed on this page.
+              </p>
+              <div className="flex justify-center">
+                <Link href="/about" passHref>
+                  <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
+                    Help, what is this about?
+                    <svg
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      className="w-4 h-4 ml-2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </>
     );
   return (
     <>
