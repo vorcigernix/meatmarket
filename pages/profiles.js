@@ -75,9 +75,9 @@ export default function Profiles() {
   if (loadingState === "loaded" && !nfts.length)
     return (
       <>
-        <section className="text-zinc-600 body-font">
+        <section className="text-zinc-600 dark:text-zinc-300 ">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10 shadow-lg shadow-pink-500/50">
               <picture>
                 <source srcSet="/images/4.avif" type="image/avif" />
                 <img
@@ -90,45 +90,29 @@ export default function Profiles() {
               </picture>
             </div>
             <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-              <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-zinc-900 dark:text-white">
-                This page is empty <br className="hidden lg:inline-block" />
-                and that&apos;s great.
+              <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium dark:text-white">
+                All sold&nbsp;
+                <br className="hidden lg:inline-block" />
+                and that&apos;s great
               </h1>
-              <p className="mb-8 leading-relaxed dark:text-zinc-300">
-                It is empty because all profile cards created in the system are
-                bought already. If you represent a company or agency, it is a
-                great opportunity to finish the first steps decribed{" "}
-                <Link href="/about" passHref>
-                  <a className="underline">here</a>
-                </Link>
-                .
-              </p>
-              <p className="mb-8 leading-relaxed dark:text-zinc-300">
-                If you are a profesional, looking for a place to create your
-                profile card NFT, even better. Go create your profile quickly{" "}
-                <Link href="/create-item" passHref>
-                  <a className="underline">here</a>
-                </Link>{" "}
-                and be among first cards listed on this page.
+              <p className="mb-8 leading-relaxed">
+                Shelves are empty because all profile cards created in the
+                system are bought already. If you represent a company or agency,
+                it is a great opportunity to finish the first steps decribed in
+                the{" "}
               </p>
               <div className="flex justify-center">
                 <Link href="/about" passHref>
-                  <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
-                    Help, what is this about?
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-4 h-4 ml-2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
+                  <button className="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded font-sans">
+                    About page
+                  </button>
                 </Link>
               </div>
+              <p className="my-8 leading-relaxed">
+                If you are a profesional, looking for a place to create your
+                profile card NFT, even better. Go create your profile quickly
+                and be among the first to sell it.
+              </p>
             </div>
           </div>
         </section>
