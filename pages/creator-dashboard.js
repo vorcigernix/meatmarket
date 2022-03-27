@@ -6,10 +6,10 @@ import Link from "next/link";
 
 import addPolygonNetwork from "/components/injectPolygonMain";
 
-import { nftmarketaddress, nftaddress } from "../config";
+import { marketplaceAddress } from "../config";
 
-import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
-import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
+import NFTMarketplace from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
+
 import Loader from "../components/loader";
 
 export default function CreatorDashboard() {
@@ -29,17 +29,16 @@ export default function CreatorDashboard() {
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
 
-    const marketContract = new ethers.Contract(
-      nftmarketaddress,
-      Market.abi,
+    const contract = new ethers.Contract(
+      marketplaceAddress,
+      NFTMarketplace.abi,
       signer
     );
-    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
-    const data = await marketContract.fetchItemsCreated();
+    const data = await contract.fetchItemsListed();
 
     const items = await Promise.all(
       data.map(async (i) => {
-        const tokenUri = await tokenContract.tokenURI(i.tokenId);
+        const tokenUri = await contract.tokenURI(i.tokenId);
         const meta = await axios.get(tokenUri);
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
@@ -52,7 +51,7 @@ export default function CreatorDashboard() {
           name: meta.data.name,
           description: meta.data.description,
           skills: meta.data.skills,
-          seaId: i.nftContract,
+          seaId: tokenUri,
         };
         return item;
       })
@@ -157,24 +156,20 @@ export default function CreatorDashboard() {
     );
   return (
     <>
-      <section className="text-zinc-600 dark:text-zinc-300 ">
-        <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <h2 className="sm:text-3xl pl-5 text-2xl text-zinc-900 dark:text-zinc-300 font-medium font-title mb-2 md:w-2/5">
-            Your Contact Cards
-          </h2>
-          <div className="md:w-3/5 md:pl-6">
-            <p className="leading-relaxed text-base">
-              This is a collection of NFTs you have created. They can be bought
-              here on You.nf or you can list them on the marketplace like{" "}
-              <a href="https://opensea.io/" target="_blank" rel="noreferrer">
-                OpenSea
-              </a>
-              .
+      <section className="text-zinc-600 dark:text-zinc-300 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-col text-center w-full mb-20">
+            <h1 className="font-title sm:text-4xl text-3xl mb-4 dark:text-white">
+              Contact cards created
+            </h1>
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+              These are You.nf profiles you created. Those not sold already are
+              listed on a Profiles page.
             </p>
-            <div className="flex md:mt-4 mt-6">
-              <Link href="/profiles" passHref>
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+              <Link href="/about">
                 <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
-                  Get more
+                  Tell me more
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -188,33 +183,25 @@ export default function CreatorDashboard() {
                   </svg>
                 </a>
               </Link>
-            </div>
+            </p>
           </div>
-        </div>
-      </section>
-      <section>
-        <div className="container px-5 pb-24 mx-auto">
-          <div key="wrapper" className="flex flex-wrap space-x-5 space-y-5">
+          <div className="flex flex-wrap -m-4">
             <Loader loadingState={loadingState}></Loader>
             {nfts.map((nft, i) => (
-              <div key={`token${i}`} className="p-1 md:w-1/4 lg:w-1/5  ">
-                <div className="h-full dark:bg-zinc-900 rounded-lg overflow-hidden shadow-lg shadow-pink-500/50">
+              <div key={`token${i}`} className="p-4 lg:w-1/4 md:w-1/2">
+                <div className="h-full flex flex-col items-center text-center">
                   <img
-                    className="lg:h-72 md:h-72 w-full object-cover object-center"
+                    className="flex-shrink-0 rounded-lg w-full h-64 object-cover object-center mb-4 shadow-lg shadow-pink-500/50"
                     src={nft.image}
                     alt={nft.name}
                   />
-                  <div className="p-6">
-                    <h2 className="tracking-widest text-xs font-title font-medium text-zinc-400 mb-1">
-                      {nft.location}
-                    </h2>
-                    <h1 className="text-lg font-medium text-zinc-900 dark:text-zinc-200 mb-3">
+                  <div className="w-full">
+                    <h2 className="title-font font-medium text-lg text-zinc-900 dark:text-zinc-300">
                       {nft.name}
-                    </h1>
-                    <p className="leading-relaxed mb-3 h-16 text-zinc-800 dark:text-zinc-400 ">
-                      {nft.description}
-                    </p>
-                    <div className="flex items-center flex-wrap ">
+                    </h2>
+                    <h3 className="text-zinc-500 mb-3">{nft.location}</h3>
+                    <p className="mb-4">{nft.description}</p>
+                    <span className="inline-flex">
                       {nft.sold && (
                         <a
                           className="text-pink-500 inline-flex items-center md:mb-2 lg:mb-0 text-sm"
@@ -239,7 +226,7 @@ export default function CreatorDashboard() {
                           Owned
                         </a>
                       )}
-                    </div>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -248,49 +235,5 @@ export default function CreatorDashboard() {
         </div>
       </section>
     </>
-  );
-}
-
-function x() {
-  return (
-    <div key={i} className="xl:w-1/3 md:w-1/2 p-4">
-      <div className="rounded-xl shadow-lg shadow-pink-500/50 p-6">
-        <div className="inline-flex items-center justify-center mb-4">
-          <img
-            className="object-cover object-center rounded-full w-14 h-14 mx-auto my-4 mr-4"
-            alt="profile picture"
-            src={nft.image}
-          />
-          <span>{nft.name}</span>
-        </div>
-        <h2 className="text-lg text-zinc-900 font-medium font-title mb-2">
-          {nft.sold && (
-            <span className="text-green-500 text-sm">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                />
-              </svg>
-              Sold
-            </span>
-          )}
-        </h2>
-        <p className="leading-relaxed text-base">{nft.description}</p>
-
-        <div className="w-12 h-1 bg-pink-500 rounded mt-2 mb-4"></div>
-        <p className=" text-sm">{nft.skills}</p>
-        <p>{nft.price} ETH</p>
-        {nft.sold && <p className="text-sm  break-all">Owner: {nft.owner}</p>}
-      </div>
-    </div>
   );
 }

@@ -1,20 +1,24 @@
-import { ethers } from "ethers";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Web3Modal from "web3modal";
+import { ethers } from 'ethers'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import Web3Modal from 'web3modal'
+import { useRouter } from 'next/router'
 import Link from "next/link";
 
 import addPolygonNetwork from "/components/injectPolygonMain";
 
-import { nftmarketaddress, nftaddress } from "../config";
 
-import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
-import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
+import {
+  marketplaceAddress
+} from '../config'
+
+import NFTMarketplace from '../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json'
 import Loader from "../components/loader";
 
 export default function MyAssets() {
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
+  const router = useRouter()
   useEffect(() => {
     loadNFTs();
   }, []);
@@ -24,27 +28,23 @@ export default function MyAssets() {
     const web3Modal = new Web3Modal({
       network: "mainnet",
       cacheProvider: true,
-    });
-    const connection = await web3Modal.connect();
-    const provider = new ethers.providers.Web3Provider(connection);
-    const signer = provider.getSigner();
+    })
+    const connection = await web3Modal.connect()
+    const provider = new ethers.providers.Web3Provider(connection)
+    const signer = provider.getSigner()
 
-    const marketContract = new ethers.Contract(
-      nftmarketaddress,
-      Market.abi,
-      signer
-    );
-    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
-    const data = await marketContract.fetchMyNFTs();
+    const marketplaceContract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer)
+    const data = await marketplaceContract.fetchMyNFTs()
 
     const items = await Promise.all(
-      data.map(async (i) => {
-        const tokenUri = await tokenContract.tokenURI(i.tokenId);
-        const meta = await axios.get(tokenUri);
-        let price = ethers.utils.formatUnits(i.price.toString(), "ether");
+      data.map(async (i) => {    
+      const tokenURI = await marketplaceContract.tokenURI(i.tokenId)
+      const meta = await axios.get(tokenURI)
+      let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
         let item = {
           price,
           tokenId: i.tokenId.toNumber(),
+          tokenURI,
           seller: i.seller,
           owner: i.owner,
           image: meta.data.image,
@@ -173,7 +173,7 @@ export default function MyAssets() {
           <div key="wrapper" className="flex flex-wrap md:space-x-5 space-y-5">
             <Loader loadingState={loadingState}></Loader>
             {nfts.map((nft, i) => (
-              <div key={`card${i}`} className="p-1 md:w-1/4 lg:w-1/5  ">
+              <div key={`mycard${i}`} className="p-1 md:w-1/4 lg:w-1/5  ">
                 <div className="h-full dark:bg-zinc-900 rounded-lg overflow-hidden shadow-lg shadow-pink-500/50">
                   <img
                     className="lg:h-72 md:h-72 w-full object-cover object-center"
