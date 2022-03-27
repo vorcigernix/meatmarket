@@ -135,80 +135,78 @@ export default function Profiles() {
       </>
     );
   return (
-    <>
-      <section className="text-zinc-600 dark:text-zinc-300 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="font-title sm:text-4xl text-3xl mb-4 dark:text-white">
-              You.nf Profiles
-            </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              These are You.nf profiles you can buy. By buying them, you get a
-              direct contact information.
-            </p>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              <Link href="/about">
-                <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
-                  Tell me more
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </Link>
-            </p>
-          </div>
-          <div className="flex flex-wrap -m-4">
-            <Loader loadingState={loadingState}></Loader>
+    <section className="text-zinc-600 dark:text-zinc-300 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-col text-center w-full mb-20">
+          <h1 className="font-title sm:text-4xl text-3xl mb-4 dark:text-white">
+            You.nf Profiles
+          </h1>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+            These are You.nf profiles you can buy. By buying them, you get a
+            direct contact information.
+          </p>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+            <Link href="/about">
+              <a className="text-pink-500 inline-flex items-center hover:underline underline-offset-8 decoration-2">
+                Tell me more
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-4 h-4 ml-2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </Link>
+          </p>
+        </div>
+        <div className="flex flex-wrap -m-4">
+          <Loader loadingState={loadingState}></Loader>
 
-            {nfts.map((nft, i) => (
-              <div key={`younfcard${i}`} className="p-4 lg:w-1/4 md:w-1/2">
-                <div className="h-full flex flex-col items-center text-center">
-                  <img
-                    className="flex-shrink-0 rounded-lg w-full h-64 object-cover object-center mb-4 shadow-lg shadow-pink-500/50"
-                    src={nft.image}
-                    alt={nft.name}
-                  />
-                  <div className="w-full">
-                    <h2 className="title-font font-medium text-lg text-zinc-900 dark:text-zinc-300">
-                      {nft.name}
-                    </h2>
-                    <h3 className="text-zinc-500 mb-3">{nft.location}</h3>
-                    <p className="mb-4">{nft.description}</p>
-                    <span className="inline-flex">
-                      <button
-                        className="text-pink-500 inline-flex items-center md:mb-2 lg:mb-0"
-                        onClick={() => buyNft(nft)}
+          {nfts.map((nft, i) => (
+            <div key={`younfcard${i}`} className="p-4 lg:w-1/4 md:w-1/2">
+              <div className="h-full flex flex-col items-center text-center">
+                <img
+                  className="flex-shrink-0 rounded-lg w-full h-64 object-cover object-center mb-4 shadow-lg shadow-pink-500/50"
+                  src={nft.image}
+                  alt={nft.name}
+                />
+                <div className="w-full">
+                  <h2 className="title-font font-medium text-lg text-zinc-900 dark:text-zinc-300">
+                    {nft.name}
+                  </h2>
+                  <h3 className="text-zinc-500 mb-3">{nft.location}</h3>
+                  <p className="mb-4">{nft.description}</p>
+                  <span className="inline-flex">
+                    <button
+                      className="text-pink-500 inline-flex items-center md:mb-2 lg:mb-0"
+                      onClick={() => buyNft(nft)}
+                    >
+                      Get contact for {nft.price} ⟠
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
-                        Get contact for {nft.price} ⟠
-                        <svg
-                          className="w-4 h-4 ml-2"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M5 12h14"></path>
-                          <path d="M12 5l7 7-7 7"></path>
-                        </svg>
-                      </button>
-                    </span>
-                  </div>
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                  </span>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
