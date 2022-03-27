@@ -4,12 +4,10 @@ import axios from "axios";
 import Web3Modal from "web3modal";
 import Link from "next/link";
 
-import { nftaddress, nftmarketaddress, marketplaceAddress } from "../config";
+import { marketplaceAddress } from "../config";
 
 import NFTMarketplace from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
 
-import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
-import Market from "../artifacts/contracts/Market.sol/NFTMarket.json";
 import Loader from "../components/loader";
 
 //let rpcEndpoint = "https://polygon-rpc.com/";
@@ -21,7 +19,11 @@ export default function Profiles() {
     loadNFTs();
   }, []);
   async function loadNFTs() {
-    const provider = new ethers.providers.JsonRpcProvider();
+    //const provider = new ethers.providers.JsonRpcProvider();
+    const provider = new ethers.providers.InfuraProvider(
+      "matic",
+      "f0671e059fde4ab1a541db0a8ea9aa1d"
+    );
     const contract = new ethers.Contract(
       marketplaceAddress,
       NFTMarketplace.abi,
@@ -31,12 +33,13 @@ export default function Profiles() {
 
     const items = await Promise.all(
       data.map(async (i) => {
+        console.log(i);
         const tokenUri = await contract.tokenURI(i.tokenId);
         const meta = await axios.get(tokenUri);
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
           price,
-          itemId: i.itemId.toNumber(),
+          tokenId: i.tokenId.toNumber(),
           seller: i.seller,
           owner: i.owner,
           image: meta.data.image,
@@ -52,19 +55,23 @@ export default function Profiles() {
   }
   async function buyNft(nft) {
     /* needs the user to sign the transaction, so will use Web3Provider and sign it */
-    const web3Modal = new Web3Modal()
-    const connection = await web3Modal.connect()
-    const provider = new ethers.providers.Web3Provider(connection)
-    const signer = provider.getSigner()
-    const contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer)
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+    const provider = new ethers.providers.Web3Provider(connection);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(
+      marketplaceAddress,
+      NFTMarketplace.abi,
+      signer
+    );
 
     /* user will be prompted to pay the asking proces to complete the transaction */
-    const price = ethers.utils.parseUnits(nft.price.toString(), 'ether')   
+    const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
     const transaction = await contract.createMarketSale(nft.tokenId, {
-      value: price
-    })
-    await transaction.wait()
-    loadNFTs()
+      value: price,
+    });
+    await transaction.wait();
+    loadNFTs();
   }
   if (loadingState === "loaded" && !nfts.length)
     return (

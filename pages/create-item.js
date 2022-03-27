@@ -31,7 +31,7 @@ export default function CreateItem() {
   useEffect(() => {
     addPolygonNetwork();
     async function loadLocation(url) {
-      const _response = await fetch(url);
+      let _response = await fetch(url);
       _response = await _response.json();
       //console.log(_response);
       const { features } = _response;
@@ -79,62 +79,62 @@ export default function CreateItem() {
     },
   });
 
-  async function createMarket() {
-    const { name, description, price, skills, github, email, mobile, linked } =
-      formInput;
-    if (!name || !description || !price || !fileUrl) return;
-    /* first, upload to IPFS */
-    const data = JSON.stringify({
-      name,
-      description,
-      image: fileUrl,
-      skills,
-      github,
-      email,
-      mobile,
-      linked,
-      location,
-    });
-    try {
-      const added = await client.add(data);
-      const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-      /* after file is uploaded to IPFS, pass the URL to save it on Polygon */
-      createSale(url);
-    } catch (error) {
-      console.log("Error uploading file: ", error);
-    }
-  }
+  // async function createMarket() {
+  //   const { name, description, price, skills, github, email, mobile, linked } =
+  //     formInput;
+  //   if (!name || !description || !price || !fileUrl) return;
+  //   /* first, upload to IPFS */
+  //   const data = JSON.stringify({
+  //     name,
+  //     description,
+  //     image: fileUrl,
+  //     skills,
+  //     github,
+  //     email,
+  //     mobile,
+  //     linked,
+  //     location,
+  //   });
+  //   try {
+  //     const added = await client.add(data);
+  //     const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+  //     /* after file is uploaded to IPFS, pass the URL to save it on Polygon */
+  //     createSale(url);
+  //   } catch (error) {
+  //     console.log("Error uploading file: ", error);
+  //   }
+  // }
 
-  async function createSale(url) {
-    setLoadingState(true);
-    const web3Modal = new Web3Modal();
-    const connection = await web3Modal.connect();
-    const provider = new ethers.providers.Web3Provider(connection);
-    const signer = provider.getSigner();
+  // async function createSale(url) {
+  //   setLoadingState(true);
+  //   const web3Modal = new Web3Modal();
+  //   const connection = await web3Modal.connect();
+  //   const provider = new ethers.providers.Web3Provider(connection);
+  //   const signer = provider.getSigner();
 
-    /* next, create the item */
-    let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
-    let transaction = await contract.createToken(url);
-    let tx = await transaction.wait();
-    let event = tx.events[0];
-    console.log(event);
-    let value = event.args[2];
-    let tokenId = value.toNumber();
+  //   /* next, create the item */
+  //   let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
+  //   let transaction = await contract.createToken(url);
+  //   let tx = await transaction.wait();
+  //   let event = tx.events[0];
+  //   console.log(event);
+  //   let value = event.args[2];
+  //   let tokenId = value.toNumber();
 
-    const price = ethers.utils.parseUnits(formInput.price, "ether");
+  //   const price = ethers.utils.parseUnits(formInput.price, "ether");
 
-    /* then list the item for sale on the marketplace */
-    contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
-    let listingPrice = await contract.getListingPrice();
-    listingPrice = listingPrice.toString();
+  //   /* then list the item for sale on the marketplace */
+  //   contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
+  //   let listingPrice = await contract.getListingPrice();
+  //   listingPrice = listingPrice.toString();
 
-    transaction = await contract.createMarketItem(nftaddress, tokenId, price, {
-      value: listingPrice,
-    });
-    await transaction.wait();
-    setLoadingState(false);
-    router.push("/");
-  }
+  //   transaction = await contract.createMarketItem(nftaddress, tokenId, price, {
+  //     value: listingPrice,
+  //   });
+  //   await transaction.wait();
+  //   setLoadingState(false);
+  //   router.push("/");
+  // }
 
   async function uploadToIPFS() {
     const { name, description, price, skills, github, email, mobile, linked } =
@@ -281,7 +281,7 @@ export default function CreateItem() {
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             {fileUrl ? (
               <img
-                alt="ecommerce"
+                alt="profile"
                 className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded shadow-lg shadow-pink-500/50"
                 src={fileUrl}
               />
