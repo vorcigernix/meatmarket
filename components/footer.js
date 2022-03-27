@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="text-zinc-600 ">
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
-          <div className="flex flex-col md:flex-row font-title font-medium items-center mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row font-title font-bold items-center mb-4 md:mb-0">
             <img src="favicon.svg" alt="You.nf" className="w-28 h-28" />
             <div className="hidden md:flex md:flex-col md:ml-4">
               <span className="text-xl font-display dark:text-white ">
@@ -17,8 +17,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-4">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 text-sm">
+            <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest mb-4 text-base">
               Setup
             </h2>
             <nav className="list-none mb-10 text-zinc-600  hover:text-zinc-800 dark:text-zinc-300 dark:hover:text-white">
@@ -30,13 +30,13 @@ const Footer = () => {
                   onClick={() => addPolygonNetwork()}
                   className="text-left"
                 >
-                  Add Polygon network to MetaMask
+                  Setup Polygon network
                 </button>
               </li>
             </nav>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-4">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 text-sm">
+            <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest mb-4 text-base">
               Our Policies
             </h2>
             <nav className="list-none mb-10 text-zinc-600  hover:text-zinc-800 dark:text-zinc-300 dark:hover:text-white">
@@ -52,8 +52,8 @@ const Footer = () => {
               <li className="pb-2"></li>
             </nav>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-4">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 text-sm">
+            <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest mb-4 text-base">
               Technology
             </h2>
             <nav className="list-none mb-10 text-zinc-600  hover:text-zinc-800 dark:text-zinc-300 dark:hover:text-white">
@@ -69,8 +69,8 @@ const Footer = () => {
               <li className="pb-2"></li>
             </nav>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest text-sm mb-4">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 text-sm">
+            <h2 className="font-title font-bold text-zinc-900 dark:text-zinc-200 tracking-widest mb-4 text-base">
               Contacts
             </h2>
             <nav className="list-none mb-10 text-zinc-600  hover:text-zinc-800 dark:text-zinc-300 dark:hover:text-white">

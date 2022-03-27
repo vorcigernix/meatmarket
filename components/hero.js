@@ -5,7 +5,7 @@ const Hero = () => {
     <section className="text-zinc-400  ">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium text-white">
+          <h1 className="font-title sm:text-4xl text-3xl mb-4 text-white">
             Hiring market
             <br className="hidden lg:inline-block" />
             is wrong

@@ -26,7 +26,7 @@ export default function Page() {
       <section className="text-zinc-600 dark:text-zinc-300 ">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="font-title sm:text-4xl text-3xl mb-4 font-medium dark:text-white">
+            <h1 className="font-title sm:text-4xl text-3xl mb-4  dark:text-white">
               Hiring market&nbsp;
               <br className="hidden lg:inline-block" />
               is wrong

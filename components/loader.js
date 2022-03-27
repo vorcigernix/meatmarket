@@ -1,27 +1,28 @@
 export default function Loader(props) {
   return (
-    <div
-      className={`p-1 w-full md:w-1/4 lg:w-1/5 ${props.loadingState == "loaded" && "hidden"} `}
-    >
-      <div className="h-full dark:bg-zinc-900 rounded-lg overflow-hidden shadow-lg shadow-pink-500/50">
-        <img
-          className="lg:h-72 md:h-72 w-full object-cover object-center"
-          src="/images/loader.webp"
-          alt="loader" />
-        <div className="p-6 animate-pulse">
-          <h2 className="mb-4">
-            <div className="h-2 bg-zinc-600 w-16 rounded"></div>
-          </h2>
-          <h1 className="mb-4">
-            <div className="h-5 bg-zinc-400 w-2/3 rounded"></div>
-          </h1>
-          <div className="my-3 pt-1">
-            <div className="h-2 bg-zinc-400 w-full my-2 rounded"></div>
-            <div className="h-2 bg-zinc-400 w-full my-2 rounded"></div>
-            <div className="h-2 bg-zinc-400 w-full my-2 rounded"></div>
+    <>
+      <div
+        className={`p-4 lg:w-1/4 md:w-1/2 ${
+          props.loadingState == "loaded" && "hidden"
+        }`}
+      >
+        <div className="h-full flex flex-col items-center text-center">
+          <img
+            alt="loader"
+            className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+            src="/images/loader.webp"
+          />
+          <div className="w-full">
+            <h2 className="title-font font-medium text-lg text-zinc-900">
+              
+            </h2>
+            <h3 className="text-zinc-500 mb-3">Loading</h3>
+            <p className="mb-4">
+              
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

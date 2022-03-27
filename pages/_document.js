@@ -5,16 +5,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="true"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap"
-            rel="stylesheet"
-          />
+        <link rel="preload" href="/fonts/inter-v8-latin-ext_latin-regular.woff2" as="font" type="font/woff2" crossOrigin="true"></link>
+        <link rel="preload" href="/fonts/quattrocento-v15-latin-700.woff2" as="font" type="font/woff2" crossOrigin="true"></link>
+        <link rel="preload" href="/fonts/quattrocento-v15-latin-regular.woff2" as="font" type="font/woff2" crossOrigin="true"></link>
         </Head>
 
         <body className="bg-white dark:bg-zinc-900 font-body text-lg">

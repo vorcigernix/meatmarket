@@ -1,8 +1,7 @@
 module.exports = {
   theme: {
     fontFamily: {
-      display: ["Quattrocento", "sans-serif"],
-      body: ['"Source Sans Pro"', "sans-serif"],
+      body: ["Inter", "sans-serif"],
       title: ["Quattrocento", "sans-serif"],
     },
   },
