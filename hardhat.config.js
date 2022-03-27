@@ -1,7 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
 const fs = require('fs');
-const infuraId = fs.readFileSync(".infuraid").toString().trim() || process.env.infuraId;
-const secret = fs.readFileSync(".secret").toString().trim() || process.env.privateKey;
+const infuraId = process.env.infuraId;
+const secret = process.env.privateKey;
 
 module.exports = {
   defaultNetwork: "hardhat",
