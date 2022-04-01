@@ -79,63 +79,6 @@ export default function CreateItem() {
     },
   });
 
-  // async function createMarket() {
-  //   const { name, description, price, skills, github, email, mobile, linked } =
-  //     formInput;
-  //   if (!name || !description || !price || !fileUrl) return;
-  //   /* first, upload to IPFS */
-  //   const data = JSON.stringify({
-  //     name,
-  //     description,
-  //     image: fileUrl,
-  //     skills,
-  //     github,
-  //     email,
-  //     mobile,
-  //     linked,
-  //     location,
-  //   });
-  //   try {
-  //     const added = await client.add(data);
-  //     const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-  //     /* after file is uploaded to IPFS, pass the URL to save it on Polygon */
-  //     createSale(url);
-  //   } catch (error) {
-  //     console.log("Error uploading file: ", error);
-  //   }
-  // }
-
-  // async function createSale(url) {
-  //   setLoadingState(true);
-  //   const web3Modal = new Web3Modal();
-  //   const connection = await web3Modal.connect();
-  //   const provider = new ethers.providers.Web3Provider(connection);
-  //   const signer = provider.getSigner();
-
-  //   /* next, create the item */
-  //   let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
-  //   let transaction = await contract.createToken(url);
-  //   let tx = await transaction.wait();
-  //   let event = tx.events[0];
-  //   console.log(event);
-  //   let value = event.args[2];
-  //   let tokenId = value.toNumber();
-
-  //   const price = ethers.utils.parseUnits(formInput.price, "ether");
-
-  //   /* then list the item for sale on the marketplace */
-  //   contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
-  //   let listingPrice = await contract.getListingPrice();
-  //   listingPrice = listingPrice.toString();
-
-  //   transaction = await contract.createMarketItem(nftaddress, tokenId, price, {
-  //     value: listingPrice,
-  //   });
-  //   await transaction.wait();
-  //   setLoadingState(false);
-  //   router.push("/");
-  // }
-
   async function uploadToIPFS() {
     const { name, description, price, skills, github, email, mobile, linked } =
       formInput;
@@ -276,7 +219,7 @@ export default function CreateItem() {
         </div>
       </section>
 
-      <section className="text-zinc-600 body-font overflow-hidden">
+      <section className="text-zinc-600 text-base overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             {fileUrl ? (
@@ -351,7 +294,7 @@ export default function CreateItem() {
                   id="name"
                   name="name"
                   type="text"
-                  className="peer p-4 h-10 w-full border border-b-2 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
+                  className="peer p-4 h-10 w-full border border-b-2 rounded border-gray-200 text-zinc-900 focus:placeholder-transparent focus:outline-none invalid:border-b-pink-600"
                   placeholder="Full Name"
                   onChange={(e) =>
                     updateFormInput({ ...formInput, name: e.target.value })
@@ -359,7 +302,7 @@ export default function CreateItem() {
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
+                  className="absolute -z-10 left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                 >
                   Full Name
                 </label>
@@ -370,7 +313,7 @@ export default function CreateItem() {
                   id="aboutme"
                   name="aboutme"
                   type="text"
-                  className="peer p-4 border w-full border-b-2 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
+                  className="peer p-4 border w-full border-b-2 rounded border-gray-200 text-zinc-900 focus:placeholder-transparent focus:outline-none invalid:border-b-pink-600"
                   placeholder="About Me"
                   onChange={(e) =>
                     updateFormInput({
@@ -381,7 +324,7 @@ export default function CreateItem() {
                 />
                 <label
                   htmlFor="aboutme"
-                  className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
+                  className="absolute -z-10 left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                 >
                   About Me
                 </label>
@@ -393,7 +336,7 @@ export default function CreateItem() {
                   id="skills"
                   name="skills"
                   type="text"
-                  className="peer p-4 h-10 w-full border border-b-2 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600"
+                  className="peer p-4 h-10 w-full border border-b-2 rounded border-gray-200 text-zinc-900 focus:focus:placeholder-transparent focus:outline-none invalid:border-b-pink-600"
                   placeholder="Skills"
                   onChange={(e) =>
                     updateFormInput({ ...formInput, skills: e.target.value })
@@ -401,7 +344,7 @@ export default function CreateItem() {
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
+                  className="absolute -z-10 left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                 >
                   Skills (separated by commas)
                 </label>
@@ -415,14 +358,14 @@ export default function CreateItem() {
                     name="email"
                     type="email"
                     placeholder="Email"
-                    className="peer p-4 h-10 w-full border border-b-2 md:border-r-0 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-r-none"
+                    className="peer p-4 h-10 w-full border border-b-2 md:border-r-0 rounded border-gray-200 text-zinc-900 focus:placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-r-none"
                     onChange={(e) =>
                       updateFormInput({ ...formInput, email: e.target.value })
                     }
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
+                    className="absolute -z-10 left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                   >
                     Email
                   </label>
@@ -434,14 +377,14 @@ export default function CreateItem() {
                     name="phone"
                     id="phone"
                     placeholder="Phone Number"
-                    className="peer p-4 h-10 w-full border border-b-2 md:border-l-0 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-l-none"
+                    className="peer p-4 h-10 w-full border border-b-2 md:border-l-0 rounded border-gray-200 text-zinc-900 focus:placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-l-none"
                     onChange={(e) =>
                       updateFormInput({ ...formInput, mobile: e.target.value })
                     }
                   />
                   <label
                     htmlFor="phone"
-                    className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
+                    className="absolute -z-10 left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                   >
                     Phone
                   </label>
@@ -453,14 +396,14 @@ export default function CreateItem() {
                     name="github"
                     id="github"
                     placeholder="https://github.com/username"
-                    className="peer p-4 h-10 w-full border border-b-2 md:border-r-0 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-r-none"
+                    className="peer p-4 h-10 w-full border border-b-2 md:border-r-0 rounded border-gray-200 text-zinc-900 focus:placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-r-none"
                     onChange={(e) =>
                       updateFormInput({ ...formInput, github: e.target.value })
                     }
                   />
                   <label
                     htmlFor="github"
-                    className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
+                    className="absolute -z-10 left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                   >
                     Github URL
                   </label>
@@ -470,14 +413,14 @@ export default function CreateItem() {
                     name="linkedin"
                     id="linkedin"
                     placeholder="https://linkedin.com/in/username"
-                    className="peer p-4 h-10 w-full border border-b-2 md:border-l-0 rounded border-gray-200 text-zinc-900 placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-l-none"
+                    className="peer p-4 h-10 w-full border border-b-2 md:border-l-0 rounded border-gray-200 text-zinc-900 focus:placeholder-transparent focus:outline-none invalid:border-b-pink-600 md:rounded-l-none"
                     onChange={(e) =>
                       updateFormInput({ ...formInput, linked: e.target.value })
                     }
                   />
                   <label
                     htmlFor="linkedin"
-                    className="absolute left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
+                    className="absolute -z-10 left-2 -top-5 text-zinc-600 dark:text-zinc-200 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-zinc-600 dark:peer-focus:text-zinc-200 peer-focus:text-sm"
                   >
                     LinkedIn URL
                   </label>
