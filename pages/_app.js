@@ -4,6 +4,7 @@ import Script from "next/script";
 import "../styles/globals.css";
 import { useRouter } from "next/router";
 import { GTM_ID, pageview } from "../components/gtm";
+import {useEffect} from 'react';
 
 function Marketplace({ Component, pageProps }) {
 	const router = useRouter();

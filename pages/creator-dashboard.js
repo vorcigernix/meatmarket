@@ -18,7 +18,7 @@ export default function CreatorDashboard() {
   const [loadingState, setLoadingState] = useState("not-loaded");
   useEffect(() => {
     loadNFTs();
-  }, []);
+  }, [nfts]);
   async function loadNFTs() {
     await addPolygonNetwork();
     const web3Modal = new Web3Modal({
