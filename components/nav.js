@@ -22,7 +22,7 @@ const Nav = () => {
             </div>
           </a>
         </Link>
-        <nav className="md:ml-auto flex flex-wrap items-center md:space-x-12 justify-center font-semibold">
+        <nav className="md:ml-auto flex flex-wrap items-center md:space-x-12 justify-center font-bold text-lg">
           <Link href="/profiles" passHref>
             <a className="mr-5 hover:text-pink-400">Profiles</a>
           </Link>

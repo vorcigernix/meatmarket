@@ -35,8 +35,6 @@ class MyDocument extends Document {
 							style={{ display: "none", visibility: "hidden" }}
 						/>
 					</noscript>
-					<div id='fb-root'></div>
-					<div id='fb-customer-chat' class='fb-customerchat'></div>
 					<Main />
 					<NextScript />
 				</body>
