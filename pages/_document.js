@@ -26,7 +26,7 @@ class MyDocument extends Document {
 						crossOrigin='true'></link>
 				</Head>
 
-				<body className='bg-white dark:bg-zinc-900 font-body text-lg'>
+				<body className='bg-white dark:bg-zinc-900 font-body text-base'>
 					<noscript>
 						<iframe
 							src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
