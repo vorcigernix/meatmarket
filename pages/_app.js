@@ -31,7 +31,7 @@ function Marketplace({ Component, pageProps }) {
 					property='og:description'
 					content='You.nf turns around the conversation about jobs and revolutionize the hiring market.'
 				/>
-				<meta property='og:image' content='https://younf.com/og.png' />
+				<meta property='og:image' content='https://younf.com/ogyounf.png' />
 
 				<meta name='twitter:card' content='summary_large_image' />
 				<meta property='twitter:domain' content='younf.com' />
@@ -41,7 +41,7 @@ function Marketplace({ Component, pageProps }) {
 					name='twitter:description'
 					content='You.nf turns around the conversation about jobs and revolutionize the hiring market.'
 				/>
-				<meta name='twitter:image' content='https://younf.com/og.png' />
+				<meta name='twitter:image' content='https://younf.com/ogyounf.png' />
 			</Head>
 			<Script
 				strategy='afterInteractive'
